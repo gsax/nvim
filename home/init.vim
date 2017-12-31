@@ -116,8 +116,8 @@ au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !ch
 
 " Misc Section {{{
 """"""""""""""""""
-" disable python2
-let g:loaded_python_provider = 1
+" set python provider
+let g:python_host_prog = "/home/chaisen/.local/share/nvim/Python/bin/python2"
 
 " set python3 provider
 let g:python3_host_prog = "/home/chaisen/.local/share/nvim/Python3/bin/python3"
