@@ -75,6 +75,9 @@ Plug 'klen/python-mode', { 'for': ['python'] }
 " rust: vim configuration for rust
 Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
 
+" scratch: Plugin to create and use a scratch Vim buffer
+Plug 'gsax/scratch.vim'
+
 " supertab: Perform all your vim insert mode completions with Tab
 Plug 'ervandew/supertab'
 
