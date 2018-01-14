@@ -18,10 +18,7 @@ highlight LineNr ctermfg=brown
 set laststatus=2
 
 " statusline appearance
-"set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-"set statusline=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c%V\ Buf:#%n
 set statusline=%<%f\ %h%m%r\ Buf:\ #%n%=%-14.(Col:\ %c%V\ Line:\ %l/%L%)\ %P
-"set statusline=%<%f\ %h%m%r\ Buf:\ #%n\ %{fugitive#statusline()}\ %=%-14.(Col:\ %c%V\ Line:\ %l/%L%)\ %P
 
 " set colors
 hi statusline term=bold,reverse cterm=reverse ctermfg=0 ctermbg=2 gui=reverse
@@ -80,21 +77,11 @@ autocmd Syntax * syn match trailing_whitespace /\s\+$\| \+\ze\t/
 
 " Keymappings {{{
 """""""""""""""""
-" dirty hack for wrong interpreted DEL-Key
-map <F1> <del>
-map! <F1> <del>
-
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
 map k gk
 
-" Map keys matching readline keys
-"cnoremap <C-A> <Home>
-"cnoremap <C-F> <Right>
-"cnoremap <C-B> <Left>
-"cnoremap <M-B> <S-Left>
-"cnoremap <M-F> <S-Right>
-"cnoremap <C-D> <Del>
+" Make C-U delete the whole line in command mode
 cnoremap <C-U> <C-E><C-U>
 " }}}
 
