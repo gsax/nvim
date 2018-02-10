@@ -87,6 +87,10 @@ Plug 'tpope/vim-surround'
 " tabular: Vim script for text filtering and alignment
 Plug 'godlygeek/tabular'
 
+" tmux-complete.vim: Vim plugin for insert mode completion of words in
+" adjacent tmux panes 
+Plug 'wellle/tmux-complete.vim'
+
 " vim-toml: Vim syntax for TOML
 Plug 'cespare/vim-toml'
 
