@@ -104,7 +104,7 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " Color Schemes {{{
 """""""""""""""""""
 " vim-atom-dark: A vim theme inspired by Atom's default dark theme
-Plug 'gosukiwi/vim-atom-dark'
+Plug 'gsax/vim-atom-dark'
 
 call plug#end()
 " }}}
