@@ -45,6 +45,9 @@ Plug 'airblade/vim-gitgutter'
 " vim-gnupg: transparent editing of PGP files
 Plug 'jamessan/vim-gnupg'
 
+" vim-go: Go development plugin for Vim
+Plug 'fatih/vim-go'
+
 " vim-grepper: helps you win at grep
 Plug 'mhinz/vim-grepper'
 
