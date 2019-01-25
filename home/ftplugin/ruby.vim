@@ -1,5 +1,5 @@
 " Vim filetype plugin file
-" Language:	yaml
+" Language:	ruby
 
 setlocal expandtab
 setlocal tabstop=2
