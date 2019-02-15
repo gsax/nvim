@@ -121,6 +121,9 @@ scriptencoding utf-8
 " automatically give executable permissions if file begins with #! and
 " contains '/bin/' in the path
 au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile>
+
+" set filetype to c for header (*.c) files
+let c_syntax_for_h = 1
 " }}}
 
 
