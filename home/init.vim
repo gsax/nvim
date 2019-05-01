@@ -48,6 +48,9 @@ Plug 'jamessan/vim-gnupg'
 " vim-go: Go development plugin for Vim
 Plug 'fatih/vim-go'
 
+" mesonic: A Vim plugin for Meson build system
+Plug 'igankevich/mesonic'
+
 " vim-grepper: helps you win at grep
 Plug 'mhinz/vim-grepper'
 
