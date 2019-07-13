@@ -26,6 +26,9 @@ Plug 'alvan/vim-closetag'
 " deoplete: dark powered asynchronous completion framework
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+" deoplete-clang: deoplete.nvim source for C/C++/Obj-C/Obj-C++
+Plug 'deoplete-plugins/deoplete-clang', { 'for' : ['c'] }
+
 " deoplete-jedi: deoplete.nvim source for Python
 Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
 
