@@ -51,9 +51,6 @@ Plug 'jamessan/vim-gnupg'
 " vim-go: Go development plugin for Vim
 Plug 'fatih/vim-go'
 
-" mesonic: A Vim plugin for Meson build system
-Plug 'igankevich/mesonic'
-
 " vim-grepper: helps you win at grep
 Plug 'mhinz/vim-grepper'
 
@@ -65,6 +62,9 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 
 " vim-man: View and grep man pages in vim
 Plug 'vim-utils/vim-man'
+
+" mesonic: A Vim plugin for Meson build system
+Plug 'igankevich/mesonic'
 
 " neomake: Async :make and linting framework for Neovim/Vim
 Plug 'neomake/neomake'
