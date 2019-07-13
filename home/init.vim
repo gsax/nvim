@@ -17,6 +17,9 @@ Plug 'moll/vim-bbye'
 " vim-characterize: shows unicode of a char
 Plug 'tpope/vim-characterize'
 
+" vim-clang-format: Vim plugin for clang-format
+Plug 'rhysd/vim-clang-format'
+
 " closetag.vim: Auto close (X)HTML tags
 Plug 'alvan/vim-closetag'
 
