@@ -18,7 +18,7 @@ Plug 'moll/vim-bbye'
 Plug 'tpope/vim-characterize'
 
 " vim-clang-format: Vim plugin for clang-format
-Plug 'rhysd/vim-clang-format'
+Plug 'rhysd/vim-clang-format', { 'for': ['c'] }
 
 " closetag.vim: Auto close (X)HTML tags
 Plug 'alvan/vim-closetag'
@@ -52,22 +52,22 @@ Plug 'airblade/vim-gitgutter'
 Plug 'jamessan/vim-gnupg'
 
 " vim-go: Go development plugin for Vim
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'for': ['go'] }
 
 " vim-grepper: helps you win at grep
 Plug 'mhinz/vim-grepper'
 
 " html5.vim: HTML5 omnicomplete and syntax
-Plug 'othree/html5.vim'
+Plug 'othree/html5.vim', { 'for': ['html'] }
 
 " Vim-Jinja2-Syntax: An up-to-date jinja2 syntax file.
-Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'Glench/Vim-Jinja2-Syntax', { 'for': ['jinja2'] }
 
 " vim-man: View and grep man pages in vim
 Plug 'vim-utils/vim-man'
 
 " mesonic: A Vim plugin for Meson build system
-Plug 'igankevich/mesonic'
+Plug 'igankevich/mesonic', { 'for': ['meson'] }
 
 " neomake: Async :make and linting framework for Neovim/Vim
 Plug 'neomake/neomake'
@@ -104,7 +104,7 @@ Plug 'godlygeek/tabular'
 Plug 'wellle/tmux-complete.vim'
 
 " vim-toml: Vim syntax for TOML
-Plug 'cespare/vim-toml'
+Plug 'cespare/vim-toml', { 'for': ['toml'] }
 
 " ultisnips: the ultimate snippet solution for vim
 Plug 'SirVer/ultisnips'
