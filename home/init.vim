@@ -67,7 +67,7 @@ Plug 'Glench/Vim-Jinja2-Syntax', { 'for': ['jinja2'] }
 Plug 'vim-utils/vim-man'
 
 " mesonic: A Vim plugin for Meson build system
-Plug 'igankevich/mesonic', { 'for': ['meson'] }
+Plug 'igankevich/mesonic'
 
 " neomake: Async :make and linting framework for Neovim/Vim
 Plug 'neomake/neomake'
