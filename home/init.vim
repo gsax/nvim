@@ -57,6 +57,12 @@ Plug 'fatih/vim-go', { 'for': ['go'] }
 " vim-grepper: helps you win at grep
 Plug 'mhinz/vim-grepper'
 
+" vim-gutentags: A Vim plugin that manages your tag files
+Plug 'ludovicchabant/vim-gutentags'
+
+" gutentags_plus: The right way to use gtags with gutentags
+"Plug 'skywind3000/gutentags_plus'
+
 " html5.vim: HTML5 omnicomplete and syntax
 Plug 'othree/html5.vim', { 'for': ['html'] }
 
@@ -182,6 +188,9 @@ source $VIMCONFIG/gnupg.vim
 
 " Grepper
 source $VIMCONFIG/grepper.vim
+
+" Gutentags
+source $VIMCONFIG/gutentags.vim
 
 " custom keybindings
 source $VIMCONFIG/keybindings.vim
