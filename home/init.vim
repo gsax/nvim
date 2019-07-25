@@ -124,6 +124,9 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " vim-atom-dark: A vim theme inspired by Atom's default dark theme
 Plug 'gsax/vim-atom-dark'
 
+" dracula: scream A dark theme for Vim
+Plug 'dracula/vim', { 'as': 'dracula' }
+
 call plug#end()
 " }}}
 " }}}
@@ -156,8 +159,9 @@ let g:loaded_ruby_provider = 1
 " disable node
 let g:loaded_node_provider = 1
 
-" set colorscheme
-colorscheme atom-dark
+" set colorscheme and activate background opacity
+let g:dracula_colorterm = 0
+colorscheme dracula
 
 " highlight the current line
 set cursorline

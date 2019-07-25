@@ -1,5 +1,6 @@
 " Set the airline theme
-let g:airline_theme = 'minimalist'
+"let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'dracula'
 
 " Use patched powerline fonts
 let g:airline_powerline_fonts = 1
