@@ -125,7 +125,7 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'gsax/vim-atom-dark'
 
 " dracula: scream A dark theme for Vim
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'gsax/dracula-vim', { 'as': 'dracula' }
 
 call plug#end()
 " }}}
