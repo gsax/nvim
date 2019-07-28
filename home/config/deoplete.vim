@@ -14,4 +14,4 @@ autocmd CompleteDone * pclose!
 let g:deoplete#sources#clang#libclang_path = "/usr/lib/llvm/8/lib64/libclang.so.8"
 
 " Set clang_header folder for deoplete-clang
-let g:deoplete#sources#clang#clang_header = "/usr/lib/clang/8.0.0/include"
+let g:deoplete#sources#clang#clang_header = "/usr/lib/clang/8.0.1/include"
