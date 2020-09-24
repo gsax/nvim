@@ -1,9 +1,11 @@
 " Vim filetype plugin file
-" Language:	t2t
+" Language:	haskell
 
-setlocal noexpandtab
+setlocal expandtab
 setlocal tabstop=4
 setlocal shiftwidth=4
+setlocal softtabstop=2
 setlocal autoindent
+setlocal smarttab
 
 setlocal colorcolumn=80

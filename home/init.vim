@@ -1,7 +1,7 @@
-" vim-plug settings {{{
-"""""""""""""""""""""""
-" Plugins {{{
-"""""""""""""
+" vim-plug settings
+"""""""""""""""""""
+" Plugins
+"""""""""
 " vim plugins path
 call plug#begin('$VIMBUNDLE')
 
@@ -14,39 +14,13 @@ Plug 'vim-airline/vim-airline-themes'
 " vim-bbye: don't close splits when closing a buffer
 Plug 'moll/vim-bbye'
 
-" vim-characterize: shows unicode of a char
-Plug 'tpope/vim-characterize'
-
-" vim-clang-format: Vim plugin for clang-format
-Plug 'rhysd/vim-clang-format', { 'for': ['c'] }
-
-" closetag.vim: Auto close (X)HTML tags
-Plug 'alvan/vim-closetag'
-
-" deoplete: dark powered asynchronous completion framework
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-" deoplete-clang: deoplete.nvim source for C/C++/Obj-C/Obj-C++
-Plug 'deoplete-plugins/deoplete-clang', { 'for' : ['c'] }
-
-" deoplete-jedi: deoplete.nvim source for Python
-Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
-
-" vim-esearch: Perform search in files easily
-Plug 'eugen0329/vim-esearch'
-
-" vim-fugitive: git for vim
-Plug 'tpope/vim-fugitive'
-
-" fzf: A command-line fuzzy finder written in Go
-Plug 'junegunn/fzf', { 'dir': '~/.go/src/github.com/junegunn/fzf/' }
+" completion-nvim: A async completion framework aims to provide completion
+" to neovim's built in LSP written in Lua 
+Plug 'nvim-lua/completion-nvim'
 
 " fzf.vim: fzf ❤️ vim
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-
-" vim-gitgutter: A Vim plugin which shows a git diff in the gutter
-" (signcolumn) and stages/undoes hunks
-Plug 'airblade/vim-gitgutter'
 
 " vim-gnupg: transparent editing of PGP files
 Plug 'jamessan/vim-gnupg'
@@ -54,73 +28,20 @@ Plug 'jamessan/vim-gnupg'
 " vim-go: Go development plugin for Vim
 Plug 'fatih/vim-go', { 'for': ['go'] }
 
-" vim-grepper: helps you win at grep
-Plug 'mhinz/vim-grepper'
-
-" vim-gutentags: A Vim plugin that manages your tag files
-Plug 'ludovicchabant/vim-gutentags'
-
-" gutentags_plus: The right way to use gtags with gutentags
-"Plug 'skywind3000/gutentags_plus'
-
-" html5.vim: HTML5 omnicomplete and syntax
-Plug 'othree/html5.vim', { 'for': ['html'] }
-
-" Vim-Jinja2-Syntax: An up-to-date jinja2 syntax file.
-Plug 'Glench/Vim-Jinja2-Syntax', { 'for': ['jinja2'] }
-
-" vim-man: View and grep man pages in vim
-Plug 'vim-utils/vim-man'
-
-" mesonic: A Vim plugin for Meson build system
-Plug 'igankevich/mesonic'
-
-" neomake: Async :make and linting framework for Neovim/Vim
-Plug 'neomake/neomake'
+" nvim-lspconfig: Quickstart configurations for the Nvim LSP client 
+Plug 'neovim/nvim-lspconfig'
 
 " NERDCommenter: orgasmic comments
 Plug 'scrooloose/nerdcommenter'
 
-" NERDTree: a tree explorer plugin for vim
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-
-" nerdtree-git-plugin: A plugin of NERDTree showing git status
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
-
-" python-mode
-Plug 'klen/python-mode', { 'for': ['python'] }
-
-" rust: vim configuration for rust
-Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
-
-" scratch: Plugin to create and use a scratch Vim buffer
-Plug 'gsax/scratch.vim'
-
-" supertab: Perform all your vim insert mode completions with Tab
-Plug 'ervandew/supertab'
-
-" surround.vim: quoting/parenthesizing made simple
-Plug 'tpope/vim-surround'
-
 " tabular: Vim script for text filtering and alignment
 Plug 'godlygeek/tabular'
-
-" tmux-complete.vim: Vim plugin for insert mode completion of words in
-" adjacent tmux panes 
-Plug 'wellle/tmux-complete.vim'
 
 " vim-toml: Vim syntax for TOML
 Plug 'cespare/vim-toml', { 'for': ['toml'] }
 
-" ultisnips: the ultimate snippet solution for vim
-Plug 'SirVer/ultisnips'
-
-" undotree: show the undotree
-Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
-" }}}
-
-" Color Schemes {{{
-"""""""""""""""""""
+" Color Schemes
+"""""""""""""""
 " vim-atom-dark: A vim theme inspired by Atom's default dark theme
 Plug 'gsax/vim-atom-dark'
 
@@ -128,36 +49,87 @@ Plug 'gsax/vim-atom-dark'
 Plug 'gsax/dracula-vim', { 'as': 'dracula' }
 
 call plug#end()
-" }}}
-" }}}
 
 
-" Programming Section {{{
-"""""""""""""""""""""""""
+"""""""""""""""""
+" USER SETTINGS "
+"""""""""""""""""
+
+" Map the leader key to space
+let mapleader = "\<space>"
+
+" Appereance
+""""""""""""
+" set color of syntax highlight
+set background=dark
+
+" always display status-line
+set laststatus=2
+
+
+" Split Config
+""""""""""""""
+" vsplit for help
+cabbrev h botright vert h
+map <F1> :botright vert h<CR>
+
+" vsplit for diffsplit
+set diffopt=vertical
+
+" place splits right and under the current pane
+set splitbelow
+set splitright
+
+
+" Misc
+""""""
+" use incremental search
+set incsearch
+
+" map leader space to clear search
+nnoremap <silent><leader><space> :nohlsearch<CR>
+
+" enable the autocompletion menu
+set wildmenu
+
+" allow modelines
+set modeline
+
+" deactivate annoying beeps
+set noerrorbells visualbell t_vb=
+set novisualbell
+
+" make it possible to move outsitde the text in visual block mode
+set virtualedit=block
+
+" don't redraw the screen while executing macros
+set lazyredraw
+
+" shows the last command in bottom right
+set showcmd
+
+" don't lose undo history after switching buffers
+set hidden
+
+" don't show mode
+set noshowmode
+
+
+" Programming Section
+"""""""""""""""""""""
 scriptencoding utf-8
 
-" automatically give executable permissions if file begins with #! and
-" contains '/bin/' in the path
-au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile>
-
-" set filetype to c for header (*.c) files
+" set filetype to c for header (*.h) files
 let c_syntax_for_h = 1
-" }}}
 
 
-" Misc Section {{{
-""""""""""""""""""
+" Misc Section
+""""""""""""""
 " set python provider
-let g:python_host_prog = "/home/chaisen/.local/share/nvim/Python/bin/python2"
+let g:python_host_prog = "/usr/bin/python2"
 
 " set python3 provider
-let g:python3_host_prog = "/home/chaisen/.local/share/nvim/Python3/bin/python3"
-
-" disable ruby
-let g:loaded_ruby_provider = 1
-
-" disable node
-let g:loaded_node_provider = 1
+let g:python3_host_prog = "/usr/bin/python3"
 
 " set colorscheme and activate background opacity
 let g:dracula_colorterm = 0
@@ -171,18 +143,14 @@ set scrolloff=2
 
 " activate TrueColor support
 if (has("termguicolors"))
-	set termguicolors
+  set termguicolors
 endif
-" }}}
 
 
-" Plugin Configuration {{{
-""""""""""""""""""""""""""
+" Plugin Configuration
+""""""""""""""""""""""
 " vim-airline
 source $VIMCONFIG/airline.vim
-
-" deoplete
-source $VIMCONFIG/deoplete.vim
 
 " fzf
 source $VIMCONFIG/fzf.vim
@@ -190,32 +158,16 @@ source $VIMCONFIG/fzf.vim
 " GnuPG
 source $VIMCONFIG/gnupg.vim
 
-" Grepper
-source $VIMCONFIG/grepper.vim
-
-" Gutentags
-source $VIMCONFIG/gutentags.vim
+" Go
+source $VIMCONFIG/go.vim
 
 " custom keybindings
 source $VIMCONFIG/keybindings.vim
 
-" neomake
-source $VIMCONFIG/neomake.vim
-
 " NERDCommenter
 source $VIMCONFIG/nerdcommenter.vim
 
-" NERDTree
-source $VIMCONFIG/nerdtree.vim
+" lsp
+lua require("lsp")
+source $VIMCONFIG/lsp.vim
 
-" python mode
-source $VIMCONFIG/python-mode.vim
-
-" ultisnips
-source $VIMCONFIG/ultisnips.vim
-
-" Undotree
-source $VIMCONFIG/undotree.vim
-" }}}
-
-" vim:foldmethod=marker:foldlevel=0
