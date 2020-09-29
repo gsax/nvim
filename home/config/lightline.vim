@@ -4,9 +4,6 @@ let g:lightline = {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
-      \ 'component': {
-      \   'lineinfo': ' %3l:%-2c',
-      \ },
       \ 'component_function': {
       \   'readonly': 'LightlineReadonly',
       \   'gitbranch': 'LightlineGit',

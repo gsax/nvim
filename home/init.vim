@@ -8,14 +8,14 @@ call plug#begin('$VIMBUNDLE')
 Plug 'moll/vim-bbye'
 
 " completion-nvim: A async completion framework aims to provide completion
-" to neovim's built in LSP written in Lua 
+" to neovim's built in LSP written in Lua
 Plug 'nvim-lua/completion-nvim'
 
 " fzf.vim: fzf ❤️ vim
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
-" vim-gitbranch: Provides the branch name of the current git repository 
+" vim-gitbranch: Provides the branch name of the current git repository
 Plug 'itchyny/vim-gitbranch'
 
 " vim-gnupg: transparent editing of PGP files
@@ -24,10 +24,10 @@ Plug 'jamessan/vim-gnupg'
 " vim-go: Go development plugin for Vim
 Plug 'fatih/vim-go', { 'for': ['go'] }
 
-" lightline.vim: A light and configurable statusline/tabline plugin for Vim 
+" lightline.vim: A light and configurable statusline/tabline plugin for Vim
 Plug 'itchyny/lightline.vim'
 
-" nvim-lspconfig: Quickstart configurations for the Nvim LSP client 
+" nvim-lspconfig: Quickstart configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
 
 " NERDCommenter: orgasmic comments

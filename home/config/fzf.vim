@@ -1,5 +1,5 @@
 " Search for files in specified folder
-nnoremap <leader>l :Files 
+nnoremap <leader>l :Files
 
 " Search for files under source control
 nnoremap <leader>p :GFiles<CR>
