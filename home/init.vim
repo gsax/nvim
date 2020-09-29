@@ -4,13 +4,6 @@
 """""""""
 " vim plugins path
 call plug#begin('$VIMBUNDLE')
-
-" vim-airline: lean & mean status/tabline for vim that's light as air
-Plug 'vim-airline/vim-airline'
-
-" vim-airline: a collection of themes for vim-airline
-Plug 'vim-airline/vim-airline-themes'
-
 " vim-bbye: don't close splits when closing a buffer
 Plug 'moll/vim-bbye'
 
@@ -22,11 +15,17 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
+" vim-gitbranch: Provides the branch name of the current git repository 
+Plug 'itchyny/vim-gitbranch'
+
 " vim-gnupg: transparent editing of PGP files
 Plug 'jamessan/vim-gnupg'
 
 " vim-go: Go development plugin for Vim
 Plug 'fatih/vim-go', { 'for': ['go'] }
+
+" lightline.vim: A light and configurable statusline/tabline plugin for Vim 
+Plug 'itchyny/lightline.vim'
 
 " nvim-lspconfig: Quickstart configurations for the Nvim LSP client 
 Plug 'neovim/nvim-lspconfig'
@@ -149,9 +148,6 @@ endif
 
 " Plugin Configuration
 """"""""""""""""""""""
-" vim-airline
-source $VIMCONFIG/airline.vim
-
 " fzf
 source $VIMCONFIG/fzf.vim
 
@@ -163,6 +159,9 @@ source $VIMCONFIG/go.vim
 
 " custom keybindings
 source $VIMCONFIG/keybindings.vim
+
+" lightline
+source $VIMCONFIG/lightline.vim
 
 " NERDCommenter
 source $VIMCONFIG/nerdcommenter.vim
