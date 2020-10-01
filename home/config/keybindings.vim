@@ -1,9 +1,12 @@
-" Treat long lines as break lines (useful when moving around in them)
+" map leader space to clear search
+nnoremap <silent><leader><space> :nohlsearch<CR>
+
+" treat long lines as break lines (useful when moving around in them)
 map j gj
 map k gk
 
-" Make C-U delete the whole line in command mode
+" make C-U delete the whole line in command mode
 cnoremap <C-U> <C-E><C-U>
 
-" Leave Terminal Mode with ESC
+" leave terminal mode with ESC
 tnoremap <Esc> <C-\><C-n>

@@ -10,10 +10,12 @@ let g:lightline = {
       \ },
       \ }
 
+" use the  symbol for readonly files
 function! LightlineReadonly()
   return &readonly ? '' : ''
 endfunction
 
+" show the branch name and the  symbol, when working in git repos
 function! LightlineGit()
   if exists('*gitbranch#name')
     let branch = gitbranch#name()
