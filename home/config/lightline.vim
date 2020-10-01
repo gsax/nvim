@@ -2,7 +2,19 @@ let g:lightline = {
       \ 'colorscheme': 'dracula',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch', 'readonly' ],
+      \             [ 'filename', 'modified' ] ],
+      \   'right': [ [ 'percent' ],
+      \              [ 'lineinfo' ],
+      \              [ 'filetype', 'fileencoding', 'fileformat' ] ],
+      \ },
+      \ 'inactive': {
+      \   'left': [ [ 'filename' ] ],
+      \   'right': [ [ 'filetype', 'fileencoding', 'fileformat' ] ],
+      \ },
+      \ 'component': {
+      \   'lineinfo': '%3l:%-2v',
+      \   'percent': '%2p%%',
       \ },
       \ 'component_function': {
       \   'readonly': 'LightlineReadonly',
