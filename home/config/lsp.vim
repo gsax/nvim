@@ -17,6 +17,9 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']
 " set completion sources and the order how to use them
 let g:completion_auto_change_source = 1
 
+" don't clutter the window with the function signature
+let g:completion_enable_auto_hover = 0
+
 let g:completion_chain_complete_list = [
     \{'complete_items': ['lsp']},
     \{'complete_items': ['snippet']},
