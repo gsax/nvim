@@ -33,6 +33,9 @@ Plug 'moll/vim-bbye'
 
 " filetypes and languages
 """""""""""""""""""""""""
+" nvim-treesitter: Nvim Treesitter configurations and abstraction layer
+Plug 'nvim-treesitter/nvim-treesitter'
+
 " vim-go: Go development plugin for Vim
 Plug 'fatih/vim-go', { 'for': ['go'] }
 
@@ -167,10 +170,12 @@ source $VIMCONFIG/keybindings.vim
 " lightline
 source $VIMCONFIG/lightline.vim
 
-" NERDCommenter
-source $VIMCONFIG/nerdcommenter.vim
-
 " lsp
 lua require("lsp")
 source $VIMCONFIG/lsp.vim
 
+" NERDCommenter
+source $VIMCONFIG/nerdcommenter.vim
+
+" treesitter
+lua require("treesitter")
