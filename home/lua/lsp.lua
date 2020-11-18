@@ -1,6 +1,6 @@
---enable completion and  nvim_lsp
+--enable completion and  lspconfig
 local completion = require('completion')
-local nvim_lsp = require('nvim_lsp')
+local lspconfig = require('lspconfig')
 
 --always start the lsp
 local on_attach = function(client, bufnr)
@@ -8,6 +8,6 @@ local on_attach = function(client, bufnr)
 end
 
 --the go language server
-nvim_lsp.gopls.setup{
+lspconfig.gopls.setup{
 	on_attach = on_attach
 }
