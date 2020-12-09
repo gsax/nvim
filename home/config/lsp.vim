@@ -20,6 +20,7 @@ let g:completion_auto_change_source = 1
 " don't clutter the window with the function signature
 let g:completion_enable_auto_hover = 0
 
+" set which completions to use and there order
 let g:completion_chain_complete_list = [
     \{'complete_items': ['lsp']},
     \{'complete_items': ['snippet']},
