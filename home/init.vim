@@ -36,6 +36,10 @@ Plug 'moll/vim-bbye'
 " nvim-treesitter: Nvim Treesitter configurations and abstraction layer
 Plug 'nvim-treesitter/nvim-treesitter'
 
+" vim-clang-format: Vim plugin for clang-format, a formatter for C, C++, Obj-C,
+" Java, JavaScript, TypeScript and ProtoBuf. 
+Plug 'rhysd/vim-clang-format', { 'for': ['c'] }
+
 " vim-go: Go development plugin for Vim
 Plug 'fatih/vim-go', { 'for': ['go'] }
 
