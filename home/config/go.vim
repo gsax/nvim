@@ -1,5 +1,5 @@
 " use goimports as gofmt command
-let g:go_fmt_command = "gofumports"
+let g:go_fmt_command = "gopls"
 let g:go_imports_autosave = 1
 
 " activate some extra syntax highlighting
