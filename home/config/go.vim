@@ -1,6 +1,7 @@
 " use goimports as gofmt command
 let g:go_fmt_command = "gopls"
 let g:go_imports_autosave = 1
+let g:go_gopls_gofumpt = 1
 
 " activate some extra syntax highlighting
 let g:go_highlight_operators = 1
