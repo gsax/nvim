@@ -43,9 +43,6 @@ Plug 'rhysd/vim-clang-format', { 'for': ['c'] }
 " vim-go: Go development plugin for Vim
 Plug 'fatih/vim-go', { 'for': ['go'] }
 
-" vim-toml: Vim syntax for TOML
-Plug 'cespare/vim-toml', { 'for': ['toml'] }
-
 " vim-gnupg: transparent editing of PGP files
 Plug 'jamessan/vim-gnupg'
 
