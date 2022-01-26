@@ -16,9 +16,9 @@ call plug#begin('$VIMBUNDLE')
 " nvim-lspconfig: Quickstart configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
 
-" completion-nvim: A async completion framework aims to provide completion
-" to neovim's built in LSP written in Lua
-Plug 'nvim-lua/completion-nvim'
+" coq_nvim: Fast as FUCK nvim completion. SQLite, concurrent scheduler,
+" hundreds of hours of optimization. 
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 
 
 " files and buffers

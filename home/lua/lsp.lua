@@ -1,11 +1,5 @@
---enable completion and  lspconfig
-local completion = require('completion')
+--enable lspconfig
 local lspconfig = require('lspconfig')
-
---always start the lsp
-local on_attach = function(client, bufnr)
-  completion.on_attach(client, bufnr)
-end
 
 --the ccls c language server
 --lspconfig.ccls.setup{
