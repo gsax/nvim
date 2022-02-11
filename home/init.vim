@@ -5,74 +5,7 @@ scriptencoding utf-8
 " map the leader key to space
 let mapleader = "\<space>"
 
-
-" vim-plug settings
-"""""""""""""""""""
-" vim plugins path
-call plug#begin('$VIMBUNDLE')
-
-" lsp and completion
-""""""""""""""""""""
-" nvim-lspconfig: Quickstart configurations for the Nvim LSP client
-Plug 'neovim/nvim-lspconfig'
-
-" coq_nvim: Fast as FUCK nvim completion. SQLite, concurrent scheduler,
-" hundreds of hours of optimization. 
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-
-" files and buffers
-"""""""""""""""""""
-" fzf.vim: fzf ❤️ vim
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-
-" vim-bbye: don't close splits when closing a buffer
-Plug 'moll/vim-bbye'
-
-
-" filetypes and languages
-"""""""""""""""""""""""""
-" nvim-treesitter: Nvim Treesitter configurations and abstraction layer
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-" vim-clang-format: Vim plugin for clang-format, a formatter for C, C++, Obj-C,
-" Java, JavaScript, TypeScript and ProtoBuf. 
-Plug 'rhysd/vim-clang-format', { 'for': ['c'] }
-
-" vim-go: Go development plugin for Vim
-Plug 'fatih/vim-go', { 'for': ['go'] }
-
-" vim-gnupg: transparent editing of PGP files
-Plug 'jamessan/vim-gnupg'
-
-
-" editing
-"""""""""
-" NERDCommenter: orgasmic comments
-Plug 'scrooloose/nerdcommenter'
-
-" tabular: Vim script for text filtering and alignment
-Plug 'godlygeek/tabular'
-
-" Auto close parentheses and repeat by dot dot dot...
-Plug 'cohama/lexima.vim'
-
-" autopairs for neovim written by lua
-" Could become an alternative to lexima
-"Plug 'windwp/nvim-autopairs'
-
-" appereance
-""""""""""""
-" lightline.vim: A light and configurable statusline/tabline plugin for Vim
-Plug 'itchyny/lightline.vim'
-
-" vim-gitbranch: Provides the branch name of the current git repository
-Plug 'itchyny/vim-gitbranch'
-
-" dracula: scream A dark theme for Vim
-Plug 'gsax/dracula-vim', { 'as': 'dracula' }
-
-call plug#end()
+lua require('plugins')
 
 
 " set the pythonversion explicitly
