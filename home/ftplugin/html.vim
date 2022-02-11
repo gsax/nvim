@@ -1,5 +1,5 @@
 " Vim filetype plugin file
-" Language:	css, html, json, toml, yaml
+" Language:	css, html, js, json, toml, yaml
 
 setlocal noexpandtab
 setlocal tabstop=2
