@@ -111,7 +111,6 @@ source $VIMCONFIG/lightline.vim
 
 " lsp
 lua require("lsp")
-source $VIMCONFIG/lsp.vim
 
 " nvim-cmp
 lua require("nvim-cmp")

@@ -29,7 +29,8 @@ cmp.setup({
          elseif has_words_before() then
             cmp.complete()
          else
-            -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+            -- The fallback function sends a already mapped key.
+            -- In this case, it's probably `<Tab>`.
             fallback()
          end
       end, { "i", "s" }),
@@ -52,21 +53,23 @@ cmp.setup({
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
    sources = cmp.config.sources({
-      -- You can specify the `cmp_git` source if you were installed it. 
+      -- You can specify the `cmp_git` source if you were installed it.
    { name = 'cmp_git' },
    }, {
       { name = 'buffer' },
       })
 })
 
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+-- Use buffer source for `/`
+-- (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
    sources = {
    { name = 'buffer' }
    }
 })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+-- Use cmdline & path source for ':'
+-- (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
    sources = cmp.config.sources({
    { name = 'path' }
@@ -74,13 +77,3 @@ cmp.setup.cmdline(':', {
       { name = 'cmdline' }
       })
 })
-
--- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig')['clangd'].setup {
-   capabilities = capabilities
-}
-require('lspconfig')['gopls'].setup {
-   capabilities = capabilities
-}
