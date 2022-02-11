@@ -46,6 +46,7 @@ cmp.setup({
    sources = cmp.config.sources({
    { name = 'nvim_lsp' },
    { name = 'vsnip' },
+   { name = 'treesitter' },
    { name = 'tmux',
          option = { all_panes = true }
       },
