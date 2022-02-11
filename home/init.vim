@@ -20,7 +20,6 @@ Plug 'neovim/nvim-lspconfig'
 " hundreds of hours of optimization. 
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 
-
 " files and buffers
 """""""""""""""""""
 " fzf.vim: fzf ❤️ vim
@@ -55,6 +54,12 @@ Plug 'scrooloose/nerdcommenter'
 " tabular: Vim script for text filtering and alignment
 Plug 'godlygeek/tabular'
 
+" Auto close parentheses and repeat by dot dot dot...
+Plug 'cohama/lexima.vim'
+
+" autopairs for neovim written by lua
+" Could become an alternative to lexima
+"Plug 'windwp/nvim-autopairs'
 
 " appereance
 """"""""""""
