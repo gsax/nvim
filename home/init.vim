@@ -113,6 +113,9 @@ source $VIMCONFIG/lightline.vim
 lua require("lsp")
 source $VIMCONFIG/lsp.vim
 
+" nvim-cmp
+lua require("nvim-cmp")
+
 " NERDCommenter
 source $VIMCONFIG/nerdcommenter.vim
 

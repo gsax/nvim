@@ -11,9 +11,17 @@ return require('packer').startup(function()
 -- nvim-lspconfig: Quickstart configurations for the Nvim LSP client
    use 'neovim/nvim-lspconfig'
 
--- coq_nvim: Fast as FUCK nvim completion. SQLite, concurrent scheduler,
--- hundreds of hours of optimization. 
-   use { 'ms-jpq/coq_nvim', branch = 'coq' }
+-- completion sources 
+   use 'hrsh7th/cmp-nvim-lsp'
+   use 'hrsh7th/cmp-buffer'
+   use 'hrsh7th/cmp-path'
+   use 'hrsh7th/cmp-cmdline'
+   use 'hrsh7th/cmp-vsnip'
+-- A completion plugin for neovim coded in Lua.
+   use 'hrsh7th/nvim-cmp'
+
+-- Snippet plugin for vim/nvim that supports LSP/VSCode's snippet format.
+   use 'hrsh7th/vim-vsnip'
 
 
 -- files and buffers
@@ -55,7 +63,7 @@ return require('packer').startup(function()
 
 -- autopairs for neovim written by lua
 -- Could become an alternative to lexima
-   --use 'windwp/nvim-autopairs'
+--   use 'windwp/nvim-autopairs'
 
 
 -- appereance

@@ -1,7 +1,5 @@
-" always enable autocompletion on startup
-let g:coq_settings = { 'auto_start': 'shut-up' }
-" don't show snipptes warning, since I don't use them
-let g:coq_settings.clients = { 'snippets.warn': [] }
+" set completeopt to have a better completion experience
+set completeopt=menu,menuone,noselect
 
 " set keybindings
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
