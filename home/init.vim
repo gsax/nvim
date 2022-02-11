@@ -33,7 +33,7 @@ Plug 'moll/vim-bbye'
 " filetypes and languages
 """""""""""""""""""""""""
 " nvim-treesitter: Nvim Treesitter configurations and abstraction layer
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " vim-clang-format: Vim plugin for clang-format, a formatter for C, C++, Obj-C,
 " Java, JavaScript, TypeScript and ProtoBuf. 
