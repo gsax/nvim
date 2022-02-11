@@ -54,11 +54,10 @@ cmp.setup({
       })
 })
 
--- Set configuration for specific filetype.
-cmp.setup.filetype('gitcommit', {
+-- Set configuration for the nvim lua api
+cmp.setup.filetype('lua', {
    sources = cmp.config.sources({
-      -- You can specify the `cmp_git` source if you were installed it.
-   { name = 'cmp_git' },
+   { name = 'nvim_lua' },
    }, {
       { name = 'buffer' },
       })
