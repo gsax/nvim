@@ -44,21 +44,22 @@ cmp.setup({
    },
    -- completion sources to use everywhere
    sources = cmp.config.sources({
-   { name = 'nvim_lsp' },
-   { name = 'vsnip' },
-   { name = 'treesitter' },
-   { name = 'tmux',
-         option = { all_panes = true }
-      },
+      { name = 'nvim_lsp' },
+      { name = 'treesitter' },
+      { name = 'vsnip' },
    }, {
       { name = 'buffer' },
-      })
+      { name = 'path' },
+      { name = 'tmux',
+            option = { all_panes = true }
+      },
+   })
 })
 
 -- Set configuration for the nvim lua api
 cmp.setup.filetype('lua', {
    sources = cmp.config.sources({
-   { name = 'nvim_lua' },
+      { name = 'nvim_lua' },
    }, {
       { name = 'buffer' },
       })
@@ -68,7 +69,7 @@ cmp.setup.filetype('lua', {
 -- (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
    sources = {
-   { name = 'buffer' }
+      { name = 'buffer' }
    }
 })
 
@@ -76,7 +77,7 @@ cmp.setup.cmdline('/', {
 -- (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
    sources = cmp.config.sources({
-   { name = 'path' }
+      { name = 'path' }
    }, {
       { name = 'cmdline' }
       })
