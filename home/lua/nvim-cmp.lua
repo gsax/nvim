@@ -42,9 +42,13 @@ cmp.setup({
          end
       end, { "i", "s" }),
    },
+   -- completion sources to use everywhere
    sources = cmp.config.sources({
    { name = 'nvim_lsp' },
    { name = 'vsnip' },
+   { name = 'tmux',
+         option = { all_panes = true }
+      },
    }, {
       { name = 'buffer' },
       })
