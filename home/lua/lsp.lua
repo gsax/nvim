@@ -15,3 +15,13 @@ lspconfig.clangd.setup{
 lspconfig.gopls.setup{
    on_attach = on_attach
 }
+
+-- the vimls vimlang language server
+lspconfig.vimls.setup{
+   on_attach = on_attach
+}
+
+-- the sumneko_lua lua language server
+lspconfig.sumneko_lua.setup{
+   on_attach = on_attach
+}
