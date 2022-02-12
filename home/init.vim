@@ -95,19 +95,19 @@ let c_syntax_for_h = 1
 " plugin configuration
 """"""""""""""""""""""
 " fzf
-source $VIMCONFIG/fzf.vim
+source $NVIMHOME/config/fzf.vim
 
 " GnuPG
-source $VIMCONFIG/gnupg.vim
+source $NVIMHOME/config/gnupg.vim
 
 " Go
-source $VIMCONFIG/go.vim
+source $NVIMHOME/config/go.vim
 
 " custom keybindings
-source $VIMCONFIG/keybindings.vim
+source $NVIMHOME/config/keybindings.vim
 
 " lightline
-source $VIMCONFIG/lightline.vim
+source $NVIMHOME/config/lightline.vim
 
 " lsp
 lua require("lsp")
@@ -116,7 +116,7 @@ lua require("lsp")
 lua require("nvim-cmp")
 
 " NERDCommenter
-source $VIMCONFIG/nerdcommenter.vim
+source $NVIMHOME/config/nerdcommenter.vim
 
 " treesitter
 lua require("treesitter")
