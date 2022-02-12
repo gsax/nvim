@@ -78,6 +78,6 @@ return require('packer').startup(function(use)
    use 'itchyny/vim-gitbranch'
 
    -- dracula: scream A dark theme for Vim
-   use { 'gsax/dracula-vim', as = 'dracula' }
+   use { 'https://git.sr.ht/~gsx/dracula-vim', as = 'dracula' }
 
 end)
