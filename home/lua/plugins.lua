@@ -16,15 +16,15 @@ return require('packer').startup(function(use)
    use 'hrsh7th/cmp-buffer'
    use 'hrsh7th/cmp-path'
    use 'hrsh7th/cmp-cmdline'
-   use 'hrsh7th/cmp-vsnip'
+   use 'saadparwaiz1/cmp_luasnip'
    use 'ray-x/cmp-treesitter'
    use 'andersevenrud/cmp-tmux'
    use { 'hrsh7th/cmp-nvim-lua', opt = true, ft = 'lua' }
    -- A completion plugin for neovim coded in Lua.
    use 'hrsh7th/nvim-cmp'
 
-   -- Snippet plugin for vim/nvim that supports LSP/VSCode's snippet format.
-   use 'hrsh7th/vim-vsnip'
+   -- Snippet Engine for Neovim written in Lua.
+   use 'L3MON4D3/LuaSnip'
 
 
    -- files and buffers

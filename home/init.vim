@@ -112,6 +112,9 @@ source $NVIMHOME/config/lightline.vim
 " lsp
 lua require("lsp")
 
+" LuaSnip
+lua require("luasnip-config")
+
 " nvim-cmp
 lua require("nvim-cmp")
 
