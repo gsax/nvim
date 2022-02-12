@@ -1,6 +1,3 @@
--- set completeopt to have a better completion experience
-vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
-
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }

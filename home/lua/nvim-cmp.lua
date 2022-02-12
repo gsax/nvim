@@ -1,3 +1,6 @@
+-- set completeopt to have a better completion experience
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+
 -- Setup nvim-cmp.
 local cmp = require'cmp'
 
