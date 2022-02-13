@@ -42,17 +42,11 @@ return require('packer').startup(function(use)
    -- nvim-treesitter: Nvim Treesitter configurations and abstraction layer
    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
-   -- vim-clang-format: Vim plugin for clang-format, a formatter for C, C++,
-   -- Obj-C, Java, JavaScript, TypeScript and ProtoBuf.
-   use { 'rhysd/vim-clang-format', opt = true,  ft = 'c' }
+   -- formatter.nvim
+    use 'mhartington/formatter.nvim'
 
    -- vim-go: Go development plugin for Vim
    use { 'fatih/vim-go', opt = true, ft = 'go' }
-
-   -- vim-prettier: A Vim plugin for Prettier
-   use { 'prettier/vim-prettier', opt = true,
-      ft = { 'css', 'html', 'javascript', 'markdown' },
-      run = 'npm install' }
 
    -- vim-gnupg: transparent editing of PGP files
    use 'jamessan/vim-gnupg'

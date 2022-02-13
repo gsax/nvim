@@ -106,6 +106,9 @@ source $NVIMHOME/config/go.vim
 " custom keybindings
 source $NVIMHOME/config/keybindings.vim
 
+" formatter
+lua require("formatter-config")
+
 " lightline
 source $NVIMHOME/config/lightline.vim
 
@@ -120,9 +123,6 @@ lua require("nvim-cmp")
 
 " NERDCommenter
 source $NVIMHOME/config/nerdcommenter.vim
-
-" prettier
-source $NVIMHOME/config/prettier.vim
 
 " treesitter
 lua require("treesitter")
