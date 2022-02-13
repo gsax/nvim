@@ -121,5 +121,8 @@ lua require("nvim-cmp")
 " NERDCommenter
 source $NVIMHOME/config/nerdcommenter.vim
 
+" prettier
+source $NVIMHOME/config/prettier.vim
+
 " treesitter
 lua require("treesitter")

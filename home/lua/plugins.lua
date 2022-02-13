@@ -49,6 +49,11 @@ return require('packer').startup(function(use)
    -- vim-go: Go development plugin for Vim
    use { 'fatih/vim-go', opt = true, ft = 'go' }
 
+   -- vim-prettier: A Vim plugin for Prettier
+   use { 'prettier/vim-prettier', opt = true,
+      ft = { 'css', 'html', 'javascript', 'markdown' },
+      run = 'npm install' }
+
    -- vim-gnupg: transparent editing of PGP files
    use 'jamessan/vim-gnupg'
 
