@@ -1,5 +1,5 @@
 -- enable treesitter
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup({
    -- enable treesitter highlighting for all languages
    highlight = {
       enable = true,
@@ -7,6 +7,6 @@ require'nvim-treesitter.configs'.setup {
    },
    -- enable treesitter indentation for all languages
    indent = {
-      enable = true
+      enable = true,
    },
-}
+})
