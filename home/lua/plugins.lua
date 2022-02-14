@@ -26,12 +26,14 @@ return require('packer').startup(function(use)
 
    -- files and buffers
    -- ^^^^^^^^^^^^^^^^^
-   -- fzf.vim: fzf ❤️ vim
-   use('junegunn/fzf')
-   use('junegunn/fzf.vim')
+   -- Find, Filter, Preview, Pick. All lua, all the time.
+   use({
+      'nvim-telescope/telescope.nvim',
+      requires = { { 'nvim-lua/plenary.nvim' } },
+   })
 
    -- vim-bbye: don't close splits when closing a buffer
-   use('moll/vim-bbye')
+   use('https://git.sr.ht/~gsx/nvim-bbye')
 
    -- filetypes and languages
    -- ^^^^^^^^^^^^^^^^^^^^^^^

@@ -99,9 +99,6 @@ let c_syntax_for_h = 1
 
 " plugin configuration
 """"""""""""""""""""""
-" fzf
-source $NVIMHOME/config/fzf.vim
-
 " GnuPG
 source $NVIMHOME/config/gnupg.vim
 
@@ -131,6 +128,9 @@ lua require('lsp')
 
 " LuaSnip
 lua require('luasnip-config')
+
+" telescope
+lua require('telescope-config')
 
 " treesitter
 lua require('treesitter')
