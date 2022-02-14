@@ -43,9 +43,9 @@ colorscheme dracula
 
 " split config
 """"""""""""""
-" vsplit for help
-cabbrev h botright vert h
-map <F1> :botright vert h<CR>
+" vsplit for help and Man
+cabbrev h vertical botright help
+cabbrev M vertical botright Man
 
 " vsplit for diffsplit
 set diffopt=vertical
