@@ -4,6 +4,7 @@ scriptencoding utf-8
 
 " map the leader key to space
 let mapleader = "\<space>"
+let maplocalleader = "\<space>"
 
 lua require('plugins')
 
