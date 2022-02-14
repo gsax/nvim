@@ -46,6 +46,9 @@ return require('packer').startup(function(use)
    -- vim-gnupg: transparent editing of PGP files
    use('jamessan/vim-gnupg')
 
+   -- vim-racket: vim bundle for Racket
+   use('wlangstroth/vim-racket')
+
    -- debugger
    -- ^^^^^^^^
    -- Debug Adapter Protocol client implementation for Neovim
