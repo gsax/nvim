@@ -1,3 +1,8 @@
+-- keybinding
+local opts = { noremap = true, silent = true }
+vim.api.nvim_set_keymap('', '<leader>g', '<cmd>:Format<CR>', opts)
+
+-- make a function for prettier, so it's easier to use for multiple languages
 local prettier = function()
    return {
       exe = 'prettier',
