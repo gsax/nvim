@@ -85,6 +85,11 @@ set hidden
 " don't show mode
 set noshowmode
 
+" use ripgrep as grepprg if installed
+if executable("rg")
+  set grepprg=rg\ --vimgrep
+endif
+
 
 " filetypes
 """""""""""
