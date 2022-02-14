@@ -33,7 +33,7 @@ return require('packer').startup(function(use)
    })
 
    -- vim-bbye: don't close splits when closing a buffer
-   use('https://git.sr.ht/~gsx/nvim-bbye')
+   use('moll/vim-bbye')
 
    -- filetypes and languages
    -- ^^^^^^^^^^^^^^^^^^^^^^^
