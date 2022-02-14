@@ -100,9 +100,6 @@ source $NVIMHOME/config/fzf.vim
 " GnuPG
 source $NVIMHOME/config/gnupg.vim
 
-" Go
-source $NVIMHOME/config/go.vim
-
 " custom keybindings
 source $NVIMHOME/config/keybindings.vim
 

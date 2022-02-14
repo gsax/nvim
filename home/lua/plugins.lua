@@ -41,9 +41,6 @@ return require('packer').startup(function(use)
    -- formatter.nvim
    use('mhartington/formatter.nvim')
 
-   -- vim-go: Go development plugin for Vim
-   use({ 'fatih/vim-go', opt = true, ft = 'go' })
-
    -- vim-gnupg: transparent editing of PGP files
    use('jamessan/vim-gnupg')
 
