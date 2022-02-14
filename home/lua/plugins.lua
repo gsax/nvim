@@ -52,12 +52,8 @@ return require('packer').startup(function(use)
    -- tabular: Vim script for text filtering and alignment
    use('godlygeek/tabular')
 
-   -- Auto close parentheses and repeat by dot dot dot...
-   use('cohama/lexima.vim')
-
    -- autopairs for neovim written by lua
-   -- Could become an alternative to lexima
-   --   use 'windwp/nvim-autopairs'
+   use('windwp/nvim-autopairs')
 
    -- appereance
    -- ^^^^^^^^^^

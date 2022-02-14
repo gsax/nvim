@@ -115,6 +115,9 @@ lua require("lsp")
 " LuaSnip
 lua require("luasnip-config")
 
+"nvim-autopairs
+lua require('nvim-autopairs').setup{}
+
 " nvim-cmp
 lua require("nvim-cmp")
 
