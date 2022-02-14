@@ -53,6 +53,12 @@ return require('packer').startup(function(use)
    -- A UI for nvim-dap
    use('rcarriga/nvim-dap-ui')
 
+   -- repl
+   -- ^^^^
+   -- Conjure: Interactive evaluation for Neovim
+   -- (Clojure, Fennel, Janet, Racket, Hy, MIT Scheme, Guile)
+   use('Olical/conjure')
+
    -- editing
    -- ^^^^^^^
    -- NERDCommenter: orgasmic comments
