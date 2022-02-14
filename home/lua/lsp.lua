@@ -3,7 +3,7 @@
 local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap(
    'n',
-   '<space>e',
+   '<leader>e',
    '<cmd>lua vim.diagnostic.open_float()<CR>',
    opts
 )
@@ -21,7 +21,7 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
    'n',
-   '<space>q',
+   '<leader>q',
    '<cmd>lua vim.diagnostic.setloclist()<CR>',
    opts
 )
@@ -72,42 +72,42 @@ local on_attach = function(client, bufnr)
    vim.api.nvim_buf_set_keymap(
       bufnr,
       'n',
-      '<space>wa',
+      '<leader>wa',
       '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>',
       opts
    )
    vim.api.nvim_buf_set_keymap(
       bufnr,
       'n',
-      '<space>wr',
+      '<leader>wr',
       '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>',
       opts
    )
    vim.api.nvim_buf_set_keymap(
       bufnr,
       'n',
-      '<space>wl',
+      '<leader>wl',
       '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
       opts
    )
    vim.api.nvim_buf_set_keymap(
       bufnr,
       'n',
-      '<space>D',
+      '<leader>D',
       '<cmd>lua vim.lsp.buf.type_definition()<CR>',
       opts
    )
    vim.api.nvim_buf_set_keymap(
       bufnr,
       'n',
-      '<space>rn',
+      '<leader>rn',
       '<cmd>lua vim.lsp.buf.rename()<CR>',
       opts
    )
    vim.api.nvim_buf_set_keymap(
       bufnr,
       'n',
-      '<space>ca',
+      '<leader>ca',
       '<cmd>lua vim.lsp.buf.code_action()<CR>',
       opts
    )
@@ -121,7 +121,7 @@ local on_attach = function(client, bufnr)
    vim.api.nvim_buf_set_keymap(
       bufnr,
       'n',
-      '<space>f',
+      '<leader>f',
       '<cmd>lua vim.lsp.buf.formatting()<CR>',
       opts
    )
