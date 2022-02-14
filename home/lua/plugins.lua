@@ -44,6 +44,13 @@ return require('packer').startup(function(use)
    -- vim-gnupg: transparent editing of PGP files
    use('jamessan/vim-gnupg')
 
+   -- debugger
+   -- ^^^^^^^^
+   -- Debug Adapter Protocol client implementation for Neovim
+   use('mfussenegger/nvim-dap')
+   -- A UI for nvim-dap
+   use('rcarriga/nvim-dap-ui')
+
    -- editing
    -- ^^^^^^^
    -- NERDCommenter: orgasmic comments
