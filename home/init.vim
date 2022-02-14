@@ -104,25 +104,25 @@ source $NVIMHOME/config/gnupg.vim
 source $NVIMHOME/config/keybindings.vim
 
 " formatter
-lua require("formatter-config")
+lua require('formatter-config')
 
 " lightline
 source $NVIMHOME/config/lightline.vim
 
 " lsp
-lua require("lsp")
+lua require('lsp')
 
 " LuaSnip
-lua require("luasnip-config")
+lua require('luasnip-config')
 
 "nvim-autopairs
 lua require('nvim-autopairs').setup{}
 
 " nvim-cmp
-lua require("nvim-cmp")
+lua require('nvim-cmp')
 
 " NERDCommenter
 source $NVIMHOME/config/nerdcommenter.vim
 
 " treesitter
-lua require("treesitter")
+lua require('treesitter')
