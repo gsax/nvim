@@ -6,6 +6,7 @@ scriptencoding utf-8
 let mapleader = "\<space>"
 let maplocalleader = "\<space>"
 
+" first load all plugins, but load setup and config the plugins at last
 lua require('plugins')
 
 
