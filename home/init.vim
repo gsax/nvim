@@ -116,22 +116,22 @@ source $NVIMHOME/config/nerdcommenter.vim
 lua require('nvim-autopairs').setup{}
 
 " nvim-cmp
-lua require('nvim-cmp')
+lua require('cmprc')
 
 " nvim-dap
-lua require('nvim-dap-config')
+lua require('daprc')
 
 " formatter
-lua require('formatter-config')
+lua require('formatterrc')
 
 " lsp
-lua require('lsp')
+lua require('lsprc')
 
 " LuaSnip
-lua require('luasnip-config')
+lua require('luasniprc')
 
 " telescope
-lua require('telescope-config')
+lua require('telescoperc')
 
 " treesitter
-lua require('treesitter')
+lua require('treesitterrc')
