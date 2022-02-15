@@ -98,6 +98,9 @@ endif
 " set filetype to c for header (*.h) files, cannot be set in the c ftplugin
 let c_syntax_for_h = 1
 
+" allow embedded syntax highlight for lua
+let g:vimsyn_embed = 'l'
+
 
 " plugin configuration
 """"""""""""""""""""""
