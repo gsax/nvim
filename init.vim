@@ -68,10 +68,6 @@ set wildmenu
 " allow modelines
 set modeline
 
-" deactivate annoying beeps
-set noerrorbells visualbell t_vb=
-set novisualbell
-
 " make it possible to move outsitde the text in visual block mode
 set virtualedit=block
 
