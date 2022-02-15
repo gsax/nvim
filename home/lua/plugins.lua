@@ -32,8 +32,8 @@ return require('packer').startup(function(use)
       requires = { { 'nvim-lua/plenary.nvim' } },
    })
 
-   -- vim-bbye: don't close splits when closing a buffer
-   use('moll/vim-bbye')
+   -- bufdelete.nvim: Delete Neovim buffers without losing window layout
+   use('famiu/bufdelete.nvim')
 
    -- filetypes and languages
    -- ^^^^^^^^^^^^^^^^^^^^^^^
