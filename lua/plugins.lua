@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
    use('saadparwaiz1/cmp_luasnip')
    use('ray-x/cmp-treesitter')
    use('andersevenrud/cmp-tmux')
-   use({ 'hrsh7th/cmp-nvim-lua', opt = true, ft = 'lua' })
+   use('hrsh7th/cmp-nvim-lua')
    -- A completion plugin for neovim coded in Lua.
    use('hrsh7th/nvim-cmp')
 
