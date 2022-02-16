@@ -133,7 +133,7 @@ end
 local capabilities = require('cmp_nvim_lsp').update_capabilities(
    vim.lsp.protocol.make_client_capabilities()
 )
-local servers = { 'clangd', 'gopls', 'sumneko_lua', 'vimls' }
+local servers = { 'clangd', 'vimls' }
 for _, lsp in pairs(servers) do
    require('lspconfig')[lsp].setup({
       on_attach = on_attach,
@@ -144,6 +144,37 @@ for _, lsp in pairs(servers) do
       },
    })
 end
+-- gopls go language server, config from go.nvim
+require('lspconfig').gopls.setup({
+   on_attach = on_attach,
+   capabilities = capabilities,
+   flags = {
+      -- This will be the default in neovim 0.7+
+      debounce_text_changes = 150,
+   },
+   settings = {
+      gopls = {
+         analyses = { unusedparams = true, unreachable = false },
+         codelenses = {
+            generate = true,
+            gc_details = true,
+            test = true,
+            tidy = true,
+         },
+         usePlaceholders = true,
+         completeUnimported = true,
+         staticcheck = true,
+         matcher = 'Fuzzy',
+         diagnosticsDelay = '500ms',
+         experimentalWatchedFileDelay = '100ms',
+         symbolMatcher = 'fuzzy',
+         ['local'] = '',
+         gofumpt = true,
+         -- buildFlags = { '-tags', 'integration' },
+         -- buildFlags = {"-tags", "functional"}
+      },
+   },
+})
 
 -- the sumneko_lua lua language server
 local runtime_path = vim.split(package.path, ';')
