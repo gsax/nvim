@@ -55,6 +55,8 @@ return require('packer').startup(function(use)
    use('mfussenegger/nvim-dap')
    -- nvim-dap-ui: A UI for nvim-dap
    use('rcarriga/nvim-dap-ui')
+   -- nvim-dap-virtual-text: This plugin adds virtual text support to nvim-dap.
+   use('theHamsta/nvim-dap-virtual-text')
    -- nvim-dap-go:  An extension for nvim-dap providing configurations for
    -- launching go debugger (delve) and debugging individual tests
    use('leoluz/nvim-dap-go')

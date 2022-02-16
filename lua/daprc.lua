@@ -43,6 +43,9 @@ require('dap-go').setup()
 -- load nvim-dap-ui
 require('dapui').setup()
 
+-- load nvim-dap-virtual-text
+require('nvim-dap-virtual-text').setup()
+
 -- keybindings
 local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap(
