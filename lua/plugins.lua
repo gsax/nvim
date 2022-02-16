@@ -43,6 +43,9 @@ return require('packer').startup(function(use)
    -- vim-gnupg: transparent editing of PGP files
    use('jamessan/vim-gnupg')
 
+   -- aniseed: Neovim configuration and plugins in Fennel (Lisp compiled to Lua)
+   use('Olical/aniseed')
+
    -- vim-racket: vim bundle for Racket
    use('wlangstroth/vim-racket')
 
