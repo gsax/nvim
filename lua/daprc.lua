@@ -24,6 +24,13 @@ dap.configurations.c = {
       args = {},
       runInTerminal = false,
    },
+   {
+      name = 'Attach to process',
+      type = 'lldb',
+      request = 'attach',
+      pid = require('dap.utils').pick_process,
+      args = {},
+   },
 }
 
 -- use the same config for c, cpp and rust
