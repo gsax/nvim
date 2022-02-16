@@ -51,10 +51,13 @@ return require('packer').startup(function(use)
 
    -- debugger
    -- ^^^^^^^^
-   -- Debug Adapter Protocol client implementation for Neovim
+   -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
    use('mfussenegger/nvim-dap')
-   -- A UI for nvim-dap
+   -- nvim-dap-ui: A UI for nvim-dap
    use('rcarriga/nvim-dap-ui')
+   -- nvim-dap-go:  An extension for nvim-dap providing configurations for
+   -- launching go debugger (delve) and debugging individual tests
+   use('leoluz/nvim-dap-go')
 
    -- repl
    -- ^^^^
