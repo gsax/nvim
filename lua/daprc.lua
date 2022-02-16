@@ -1,4 +1,6 @@
 local dap = require('dap')
+
+-- configure lldb for c, cpp and rust
 dap.adapters.lldb = {
    type = 'executable',
    command = '/usr/bin/lldb-vscode',
