@@ -40,9 +40,6 @@ return require('packer').startup(function(use)
    -- nvim-treesitter: Nvim Treesitter configurations and abstraction layer
    use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
 
-   -- formatter.nvim
-   use('mhartington/formatter.nvim')
-
    -- vim-gnupg: transparent editing of PGP files
    use('jamessan/vim-gnupg')
 

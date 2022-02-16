@@ -100,11 +100,14 @@ let g:vimsyn_embed = 'l'
 
 " plugin configuration
 """"""""""""""""""""""
-" GnuPG
-source $NVIMHOME/config/gnupg.vim
-
 " custom keybindings
 source $NVIMHOME/config/keybindings.vim
+
+" custom tools for =
+source $NVIMHOME/config/format.vim
+
+" GnuPG
+source $NVIMHOME/config/gnupg.vim
 
 " lightline
 source $NVIMHOME/config/lightline.vim
@@ -120,9 +123,6 @@ lua require('cmprc')
 
 " nvim-dap
 lua require('daprc')
-
-" formatter
-lua require('formatterrc')
 
 " lsp
 lua require('lsprc')
