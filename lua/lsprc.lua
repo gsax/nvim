@@ -182,6 +182,12 @@ table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
 
 require('lspconfig').sumneko_lua.setup({
+   on_attach = on_attach,
+   capabilities = capabilities,
+   flags = {
+      -- This will be the default in neovim 0.7+
+      debounce_text_changes = 150,
+   },
    settings = {
       Lua = {
          runtime = {
