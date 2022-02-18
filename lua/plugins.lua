@@ -46,6 +46,9 @@ return require('packer').startup(function(use)
    -- aniseed: Neovim configuration and plugins in Fennel (Lisp compiled to Lua)
    use('Olical/aniseed')
 
+   -- fennel.vim: Syntax highlighting for Fennel
+   use('bakpakin/fennel.vim')
+
    -- vim-racket: vim bundle for Racket
    use('wlangstroth/vim-racket')
 
