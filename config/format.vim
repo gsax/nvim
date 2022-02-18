@@ -5,5 +5,5 @@ augroup Autoformat
   autocmd FileType go let &l:equalprg = 'goimports | gofumpt'
   autocmd FileType lua let &l:equalprg =
         \ 'stylua --config-path $XDG_CONFIG_HOME/stylua/stylua.toml -'
-  autocmd FileType python let &l:equalprg = 'black -'
+  autocmd FileType python let &l:equalprg = 'black --line-length 80 --quiet -'
 augroup END
