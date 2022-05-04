@@ -10,13 +10,13 @@ let maplocalleader = "\<space>"
 lua require('plugins')
 
 
-" set the pythonversion explicitly
-""""""""""""""""""""""""""""""""""
-" set python provider
-let g:python_host_prog = "/usr/bin/python2"
-
+" language providers
+""""""""""""""""""""
 " set python3 provider
 let g:python3_host_prog = "/usr/bin/python3"
+
+" disable perl provider
+let g:loaded_perl_provider = 0
 
 
 " appereance
