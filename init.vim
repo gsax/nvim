@@ -12,11 +12,17 @@ lua require('plugins')
 
 " language providers
 """"""""""""""""""""
-" set python3 provider
-let g:python3_host_prog = "/usr/bin/python3"
+" disable nodejs provider
+let g:loaded_node_provider = 0
 
 " disable perl provider
 let g:loaded_perl_provider = 0
+
+" disable python provider
+let g:loaded_python3_provider = 0
+
+" disable ruby provider
+let g:loaded_ruby_provider = 0
 
 
 " appereance
