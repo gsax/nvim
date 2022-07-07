@@ -52,6 +52,9 @@ return require('packer').startup(function(use)
    -- vim-racket: vim bundle for Racket
    use('wlangstroth/vim-racket')
 
+   -- zig.vim: Vim configuration for Zig
+   use('ziglang/zig.vim')
+
    -- debugger
    -- ^^^^^^^^
    -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
