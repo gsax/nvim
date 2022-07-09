@@ -1,3 +1,6 @@
-" align line-wise comment delimiters flush left instead of following
-" code indentation
-let g:NERDDefaultAlign = 'start'
+" align as is
+let g:NERDDefaultAlign = 'none'
+" remove spaces after uncommenting for alignment
+let g:NERDRemoveExtraSpaces = 1
+" let a space between delimiter and comment
+let g:NERDSpaceDelims = 1
