@@ -2,7 +2,7 @@
 -- set nnoremap and silent for all keybindings
 local opts = { noremap = true, silent = true }
 
--- search for open buffers
+-- search for files in the current directory
 vim.api.nvim_set_keymap('n', '<leader>l', '<cmd>Telescope find_files<CR>', opts)
 
 -- search for files under source control
