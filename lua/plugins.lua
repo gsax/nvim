@@ -32,6 +32,10 @@ return require('packer').startup(function(use)
       requires = { { 'nvim-lua/plenary.nvim' } },
    })
 
+   -- 🥪 An alternative sudo.vim for Vim and
+   -- Neovim, limited support sudo in Windows
+   use('lambdalisue/suda.vim')
+
    -- bufdelete.nvim: Delete Neovim buffers without losing window layout
    use('famiu/bufdelete.nvim')
 
