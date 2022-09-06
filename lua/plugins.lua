@@ -44,9 +44,6 @@ return require('packer').startup(function(use)
    -- nvim-treesitter: Nvim Treesitter configurations and abstraction layer
    use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
 
-   -- vim-gnupg: transparent editing of PGP files
-   use('jamessan/vim-gnupg')
-
    -- aniseed: Neovim configuration and plugins in Fennel (Lisp compiled to Lua)
    use('Olical/aniseed')
 

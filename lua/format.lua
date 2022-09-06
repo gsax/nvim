@@ -1,3 +1,4 @@
+vim.cmd([[
 augroup Autoformat
   autocmd!
   autocmd FileType c let &l:equalprg = 'clang-format --assume-filename %'
@@ -7,3 +8,4 @@ augroup Autoformat
         \ 'stylua --config-path $XDG_CONFIG_HOME/stylua/stylua.toml -'
   autocmd FileType python let &l:equalprg = 'black --line-length 80 --quiet -'
 augroup END
+]])
