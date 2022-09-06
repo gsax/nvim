@@ -45,7 +45,7 @@ if (has("termguicolors"))
 endif
 
 " set colorscheme and activate background opacity
-let g:dracula_colorterm = 0
+lua require('dracularc')
 colorscheme dracula
 
 
@@ -116,7 +116,7 @@ source $NVIMHOME/config/format.vim
 source $NVIMHOME/config/gnupg.vim
 
 " lightline
-source $NVIMHOME/config/lightline.vim
+" source $NVIMHOME/config/lightline.vim
 
 " NERDCommenter
 source $NVIMHOME/config/nerdcommenter.vim
@@ -132,6 +132,9 @@ lua require('daprc')
 
 " lsp
 lua require('lsprc')
+
+" lualine
+lua require('lualinerc')
 
 " LuaSnip
 lua require('luasniprc')

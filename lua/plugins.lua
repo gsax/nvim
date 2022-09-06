@@ -90,12 +90,13 @@ return require('packer').startup(function(use)
 
    -- appereance
    -- ^^^^^^^^^^
-   -- lightline.vim: A light and configurable statusline/tabline plugin for Vim
-   use('itchyny/lightline.vim')
+   -- lualine.nvim: A blazing fast and easy to configure neovim statusline
+   -- plugin written in pure lua.
+   use('nvim-lualine/lualine.nvim')
 
    -- vim-gitbranch: Provides the branch name of the current git repository
    use('itchyny/vim-gitbranch')
 
-   -- dracula: scream A dark theme for Vim
-   use({ 'https://git.sr.ht/~gsx/dracula-vim', as = 'dracula' })
+   -- dracula.nvim: Dracula colorscheme for neovim written in Lua
+    use({ 'https://git.sr.ht/~gsx/dracula.nvim' })
 end)
