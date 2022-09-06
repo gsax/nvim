@@ -94,9 +94,6 @@ return require('packer').startup(function(use)
    -- plugin written in pure lua.
    use('nvim-lualine/lualine.nvim')
 
-   -- vim-gitbranch: Provides the branch name of the current git repository
-   use('itchyny/vim-gitbranch')
-
    -- dracula.nvim: Dracula colorscheme for neovim written in Lua
     use({ 'https://git.sr.ht/~gsx/dracula.nvim' })
 end)
