@@ -3,7 +3,7 @@
 scriptencoding utf-8
 
 " map the leader key to space
-let mapleader = "\<space>"
+let mapleader = " "
 let maplocalleader = "\\"
 
 " first load all plugins, but load setup and config the plugins at last
