@@ -92,5 +92,5 @@ return require('packer').startup(function(use)
    use('nvim-lualine/lualine.nvim')
 
    -- dracula.nvim: Dracula colorscheme for neovim written in Lua
-    use({ 'https://git.sr.ht/~gsx/dracula.nvim' })
+    use('gsax/dracula.nvim')
 end)
