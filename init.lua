@@ -93,6 +93,9 @@ vim.o.hidden = true
 -- don't show mode
 vim.o.showmode = false
 
+-- disable mouse support
+vim.o.mouse = ""
+
 -- use ripgrep as grepprg if installed
 vim.cmd([[
 if executable("rg")
