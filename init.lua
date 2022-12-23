@@ -36,6 +36,9 @@ vim.o.laststatus = 2
 -- highlight the current line
 vim.o.cursorline = true
 
+-- always show the gutterline
+vim.o.signcolumn = "yes"
+
 -- keep some lines distance to the top and bottom
 vim.o.scrolloff = 2
 
