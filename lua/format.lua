@@ -8,6 +8,6 @@ augroup Autoformat
   autocmd FileType lua let &l:equalprg =
         \ 'stylua --config-path $XDG_CONFIG_HOME/stylua/stylua.toml -'
   autocmd FileType python let &l:equalprg = 'black --line-length 80 --quiet -'
-  autocmd FileType rust let &l:equalprg = 'rustfmt'
+  autocmd FileType rust let &l:equalprg = 'rustfmt --edition 2021'
 augroup END
 ]])
