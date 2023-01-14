@@ -29,7 +29,7 @@ return require('packer').startup(function(use)
    -- Find, Filter, Preview, Pick. All lua, all the time.
    use({
       'nvim-telescope/telescope.nvim',
-      requires = { { 'nvim-lua/plenary.nvim' } },
+      requires = { 'nvim-lua/plenary.nvim' },
    })
 
    -- 🥪 An alternative sudo.vim for Vim and
@@ -38,6 +38,15 @@ return require('packer').startup(function(use)
 
    -- bufdelete.nvim: Delete Neovim buffers without losing window layout
    use('famiu/bufdelete.nvim')
+
+   -- neogit: magit for neovim
+   use({
+      'TimUntersberger/neogit',
+      requires = {
+         'nvim-lua/plenary.nvim',
+         'sindrets/diffview.nvim',
+      },
+   })
 
    -- filetypes and languages
    -- ^^^^^^^^^^^^^^^^^^^^^^^

@@ -136,6 +136,9 @@ require('cmprc')
 -- nvim-dap
 require('daprc')
 
+-- diffview
+require('diffviewrc')
+
 -- lsp
 require('lsprc')
 
@@ -144,6 +147,9 @@ require('lualinerc')
 
 -- LuaSnip
 require('luasniprc')
+
+-- neogit
+require('neogitrc')
 
 -- nvim-surround
 require('nvim-surround').setup{}
