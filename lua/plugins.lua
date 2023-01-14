@@ -85,6 +85,10 @@ return require('packer').startup(function(use)
    -- autopairs for neovim written by lua
    use('windwp/nvim-autopairs')
 
+   -- nvim-surround: Add/change/delete surrounding delimiter pairs with ease.
+   -- Written with heart in Lua.
+   use('kylechui/nvim-surround')
+
    -- appereance
    -- ^^^^^^^^^^
    -- lualine.nvim: A blazing fast and easy to configure neovim statusline
@@ -92,5 +96,5 @@ return require('packer').startup(function(use)
    use('nvim-lualine/lualine.nvim')
 
    -- dracula.nvim: Dracula colorscheme for neovim written in Lua
-    use('gsax/dracula.nvim')
+   use('gsax/dracula.nvim')
 end)

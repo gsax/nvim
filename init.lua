@@ -145,6 +145,9 @@ require('lualinerc')
 -- LuaSnip
 require('luasniprc')
 
+-- nvim-surround
+require('nvim-surround').setup{}
+
 -- telescope
 require('telescoperc')
 
