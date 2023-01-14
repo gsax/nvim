@@ -1,5 +1,5 @@
 local diffview = require('diffview')
 
-diffview.setup {
+diffview.setup({
    use_icons = false,
-}
+})
