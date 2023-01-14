@@ -90,11 +90,9 @@ vim.o.showmode = false
 vim.o.mouse = ''
 
 -- use ripgrep as grepprg if installed
-vim.cmd([[
-if executable("rg")
-  set grepprg=rg\ --vimgrep
-endif
-]])
+if vim.fn.executable('rg') == 1 then
+   vim.o.grepprg = 'rg --vimgrep'
+end
 
 -- better listchars
 vim.opt.showbreak = '↪'
