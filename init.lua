@@ -100,6 +100,10 @@ if executable("rg")
 endif
 ]])
 
+-- better listchars
+vim.opt.showbreak = '↪'
+vim.opt.listchars = { tab = '→·', space = '•', nbsp = '␣', trail = '…', eol = '↲', extends = '›', precedes = '‹' }
+
 
 -- filetypes
 --""""""""""
