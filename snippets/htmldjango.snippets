@@ -1,0 +1,14 @@
+extends html
+
+snippet block
+	{% block ${1} %}
+		${0}
+	{% endblock %}
+
+snippet extends
+	{% extends "${0:base.html}" %}
+
+snippet for
+	{% for ${1} in ${2} %}
+		${0}
+	{% endfor %}

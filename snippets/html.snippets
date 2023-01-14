@@ -1,17 +1,83 @@
-snippet ahref
-	<a href="$1">$2</a>
+snippet doct5
+	<!DOCTYPE html>
+
+
+snippet a
+	<a href="${1:#}">${0:$1}</a>
+snippet body
+	<body>
+		${0}
+	</body>
+snippet br
+	<br>
 snippet button
-	<button$1>$2</button>
+	<button type="${1:submit}">${0}</button>
 snippet div
-	<div$1>$2</div>
+	<div>$0</div>
 snippet form
-	<form action="$1" method="$2">$3</form>
+	<form action="${1}" method="${2:post}">${0}</form>
+snippet head
+	<head>
+		<meta charset="utf-8">
+		<title>${1:`substitute(vim_snippets#Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+		${0}
+	</head>
 snippet header
-	<header>$1</header>
+	<header>${0}</header>
+snippet hr
+	<hr>
+snippet html
+	<html>
+	${0}
+	</html>
+snippet html5
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width">
+			<title>${1:`substitute(vim_snippets#Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+		</head>
+		<body>
+			$0
+		</body>
+	</html>
+snippet html5l
+	<!DOCTYPE html>
+	<html lang="${1:en}">
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width">
+			<title>${2:`substitute(vim_snippets#Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+			${3:link}
+		</head>
+		<body>
+			$0
+		</body>
+	</html>
 snippet input
-	<input type="$1" name="$2">
+	<input type="${1:text/submit/hidden/button/image}" name="${2}">
 snippet label
-	<label for="$1">$2</label>
+	<label for="${0:$1}">${1}</label>
+snippet p
+	<p>${0}</p>
+snippet table
+	<table>${0}</table>
+snippet tbody
+	<tbody>${0}</tbody>
+snippet td
+	<td>${0}</td>
+snippet tfoot
+	<tfoot>${0}</tfoot>
+snippet th
+	<th>${0}</th>
+snippet thead
+	<thead>${0}</thead>
+snippet title
+	<title>${0:`substitute(vim_snippets#Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+snippet tr
+	<tr>${0}</tr>
+
 snippet trsimpsons
 	<tr>
 		<td>$1</td>
