@@ -51,17 +51,11 @@ end
 
 -- set colorscheme and activate background opacity
 require('dracularc')
-vim.cmd([[colorscheme dracula]])
+vim.cmd.colorscheme('dracula')
 
 
 -- split config
 --"""""""""""""
--- vsplit for help and Man
-vim.cmd([[
-cabbrev h vertical botright help
-cabbrev M vertical botright Man
-]])
-
 -- vsplit for diffsplit
 vim.o.diffopt = "vertical"
 
@@ -138,6 +132,9 @@ require('daprc')
 
 -- diffview
 require('diffviewrc')
+
+-- help-vsplit
+require('help-vsplit').setup{}
 
 -- lsp
 require('lsprc')

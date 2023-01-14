@@ -39,6 +39,9 @@ return require('packer').startup(function(use)
    -- bufdelete.nvim: Delete Neovim buffers without losing window layout
    use('famiu/bufdelete.nvim')
 
+   -- help-vsplit: Open Neovim help in vertical split if there is enough space
+   use('anuvyklack/help-vsplit.nvim')
+
    -- neogit: magit for neovim
    use({
       'TimUntersberger/neogit',
