@@ -152,6 +152,9 @@ require('luasniprc')
 -- neogit
 require('neogitrc')
 
+-- null-ls
+require('null-lsrc')
+
 -- nvim-surround
 require('nvim-surround').setup({})
 

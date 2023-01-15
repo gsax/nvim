@@ -9,6 +9,13 @@ return require('packer').startup(function(use)
    -- nvim-lspconfig: Quickstart configurations for the Nvim LSP client
    use('neovim/nvim-lspconfig')
 
+   -- null-ls: Use Neovim as a language server to inject LSP diagnostics,
+   -- code actions, and more via Lua.
+   use({
+      'jose-elias-alvarez/null-ls.nvim',
+      requires = { 'nvim-lua/plenary.nvim' },
+   })
+
    -- completion sources
    use('hrsh7th/cmp-nvim-lsp')
    use('hrsh7th/cmp-buffer')
