@@ -61,22 +61,34 @@ snippet label
 	<label for="${0:$1}">${1}</label>
 snippet p
 	<p>${0}</p>
+snippet small
+	<small>${0}</small>
 snippet table
-	<table>${0}</table>
+	<table>
+		${0}
+	</table>
 snippet tbody
-	<tbody>${0}</tbody>
+	<tbody>
+		${0}
+	</tbody>
 snippet td
 	<td>${0}</td>
 snippet tfoot
-	<tfoot>${0}</tfoot>
+	<tfoot>
+		${0}
+	</tfoot>
 snippet th
 	<th>${0}</th>
 snippet thead
-	<thead>${0}</thead>
+	<thead>
+		${0}
+	</thead>
 snippet title
 	<title>${0:`substitute(vim_snippets#Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
 snippet tr
-	<tr>${0}</tr>
+	<tr>
+		${0}
+	</tr>
 
 snippet trsimpsons
 	<tr>
