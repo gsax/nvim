@@ -119,47 +119,11 @@ vim.g.vimsyn_embed = 'lPr'
 
 -- plugin configuration
 --"""""""""""""""""""""
--- custom keybindings
-require('keybindings')
-
--- NERDCommenter
-require('nerdcommenter')
-
 -- nvim-autopairs
 require('nvim-autopairs').setup({})
-
--- nvim-cmp
-require('cmprc')
-
--- nvim-dap
-require('daprc')
-
--- diffview
-require('diffviewrc')
 
 -- help-vsplit
 require('help-vsplit').setup({})
 
--- lsp
-require('lsprc')
-
--- lualine
-require('lualinerc')
-
--- LuaSnip
-require('luasniprc')
-
--- neogit
-require('neogitrc')
-
--- null-ls
-require('null-lsrc')
-
 -- nvim-surround
 require('nvim-surround').setup({})
-
--- telescope
-require('telescoperc')
-
--- treesitter
-require('treesitterrc')
