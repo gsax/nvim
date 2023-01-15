@@ -86,11 +86,13 @@ return require('packer').startup(function(use)
 
    -- editing
    -- ^^^^^^^
-   -- NERDCommenter: orgasmic comments
-   use('scrooloose/nerdcommenter')
+   -- Comment: brain muscle // Smart and powerful comment plugin for neovim.
+   -- Supports treesitter, dot repeat,
+   -- left-right/up-down motions, hooks, and more
+   use('numToStr/Comment.nvim', require('Comment').setup({}))
 
-   -- tabular: Vim script for text filtering and alignment
-   use('godlygeek/tabular')
+   -- nvim-align: Neovim plugin for aligning text
+   use('RRethy/nvim-align')
 
    -- autopairs for neovim written by lua
    use('windwp/nvim-autopairs', require('nvim-autopairs').setup({}))
