@@ -116,14 +116,3 @@ vim.g.c_syntax_for_h = 1
 
 -- allow embedded syntax highlight for lua
 vim.g.vimsyn_embed = 'lPr'
-
--- plugin configuration
---"""""""""""""""""""""
--- nvim-autopairs
-require('nvim-autopairs').setup({})
-
--- help-vsplit
-require('help-vsplit').setup({})
-
--- nvim-surround
-require('nvim-surround').setup({})

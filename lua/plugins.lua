@@ -47,7 +47,7 @@ return require('packer').startup(function(use)
    use('famiu/bufdelete.nvim')
 
    -- help-vsplit: Open Neovim help in vertical split if there is enough space
-   use('anuvyklack/help-vsplit.nvim')
+   use('anuvyklack/help-vsplit.nvim', require('help-vsplit').setup({}))
 
    -- neogit: magit for neovim
    use({
@@ -93,11 +93,11 @@ return require('packer').startup(function(use)
    use('godlygeek/tabular')
 
    -- autopairs for neovim written by lua
-   use('windwp/nvim-autopairs')
+   use('windwp/nvim-autopairs', require('nvim-autopairs').setup({}))
 
    -- nvim-surround: Add/change/delete surrounding delimiter pairs with ease.
    -- Written with heart in Lua.
-   use('kylechui/nvim-surround')
+   use('kylechui/nvim-surround', require('nvim-surround').setup({}))
 
    -- appereance
    -- ^^^^^^^^^^
