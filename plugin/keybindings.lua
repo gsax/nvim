@@ -1,10 +1,5 @@
-vim.cmd([[
-" map leader space to clear search
-nnoremap <silent><leader><space> :nohlsearch<CR>
+-- make C-U delete the whole line in command mode
+vim.keymap.set('c', '<C-U>', '<C-E><C-U>')
 
-" make C-U delete the whole line in command mode
-cnoremap <C-U> <C-E><C-U>
-
-" leave terminal mode with ESC
-tnoremap <Esc> <C-\><C-n>
-]])
+-- leave terminal mode with ESC
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
