@@ -65,6 +65,9 @@ vim.o.splitright = true
 -- use incremental search
 vim.o.incsearch = true
 
+-- don't highlight search permanent
+vim.o.hlsearch = false
+
 -- enable the autocompletion menu
 vim.o.wildmenu = true
 
@@ -118,9 +121,6 @@ vim.g.vimsyn_embed = 'lPr'
 --"""""""""""""""""""""
 -- custom keybindings
 require('keybindings')
-
--- custom tools for =
-require('format')
 
 -- NERDCommenter
 require('nerdcommenter')
