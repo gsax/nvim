@@ -1,15 +1,11 @@
--- scriptencoding and mapleader must be set before all other settings
--- set encoding for vim rc files
---scriptencoding utf-8
-
 -- map the leader key to space
+-- use as first setting, so it is used correct everywhere
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
--- first load all plugins, but load setup and config the plugins at last
+-- install lazy
 require('bootstrap')
--- require('plugins')
-
+-- load all plugins
 require('lazy').setup('packages')
 
 -- language providers
@@ -49,10 +45,6 @@ if vim.fn.exists('+termguicolors') == 1 then
 elseif vim.fn.exists('+guicolors') == 1 then
    vim.opt.guicolors = true
 end
-
--- set colorscheme and activate background opacity
-require('dracularc')
-vim.cmd.colorscheme('dracula')
 
 -- split config
 --"""""""""""""

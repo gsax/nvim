@@ -1,8 +1,14 @@
 return {
-   -- A use-package inspired plugin manager for Neovim. Uses native packages,
-   -- supports Luarocks dependencies, written in Lua, allows for expressive
-   -- config
-   --  use('wbthomason/packer.nvim')
+   -- set colorscheme first, so it is applied everywhere correctly
+   -- dracula.nvim: Dracula colorscheme for neovim written in Lua
+   {
+      'gsax/dracula.nvim',
+      lazy = false,
+      priority = 1000,
+      config = function()
+         vim.cmd.colorscheme('dracula')
+      end,
+   },
 
    -- lsp and completion
    -- ^^^^^^^^^^^^^^^^^^
@@ -16,17 +22,22 @@ return {
       dependencies = { 'nvim-lua/plenary.nvim' },
    },
 
-   -- completion sources
-   'hrsh7th/cmp-nvim-lsp',
-   'hrsh7th/cmp-buffer',
-   'hrsh7th/cmp-path',
-   'hrsh7th/cmp-cmdline',
-   'saadparwaiz1/cmp_luasnip',
-   'ray-x/cmp-treesitter',
-   'andersevenrud/cmp-tmux',
-   'hrsh7th/cmp-nvim-lua',
    -- A completion plugin for neovim coded in Lua.
-   'hrsh7th/nvim-cmp',
+   {
+      'hrsh7th/nvim-cmp',
+      event = 'InsertEnter',
+      dependencies = {
+         -- completion sources
+         'andersevenrud/cmp-tmux',
+         'hrsh7th/cmp-buffer',
+         'hrsh7th/cmp-cmdline',
+         'hrsh7th/cmp-nvim-lsp',
+         'hrsh7th/cmp-nvim-lua',
+         'hrsh7th/cmp-path',
+         'ray-x/cmp-treesitter',
+         'saadparwaiz1/cmp_luasnip',
+      },
+   },
 
    --  -- Snippet Engine for Neovim written in Lua.
    'L3MON4D3/LuaSnip',
@@ -61,25 +72,50 @@ return {
       },
    },
 
+   -- diffview: Single tabpage interface for easily cycling through diffs
+   -- for all modified files for any git rev.
+   {
+      'sindrets/diffview.nvim',
+      dependencies = {
+         'nvim-lua/plenary.nvim',
+      },
+   },
+
    -- filetypes and languages
    -- ^^^^^^^^^^^^^^^^^^^^^^^
    -- nvim-treesitter: Nvim Treesitter configurations and abstraction layer
-   'nvim-treesitter/nvim-treesitter',
+   {
+      'nvim-treesitter/nvim-treesitter',
+      build = ':TSInstall all',
+   },
 
    -- aniseed: Neovim configuration and plugins in Fennel (Lisp compiled to Lua)
    'Olical/aniseed',
 
    -- debugger
    -- ^^^^^^^^
-   -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
-   'mfussenegger/nvim-dap',
    -- nvim-dap-ui: A UI for nvim-dap
-   'rcarriga/nvim-dap-ui',
+   {
+      'rcarriga/nvim-dap-ui',
+      dependencies = {
+         -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
+         'mfussenegger/nvim-dap',
+         -- nvim-dap-go:  An extension for nvim-dap providing configurations for
+         -- launching go debugger (delve) and debugging individual tests
+         'leoluz/nvim-dap-go',
+      },
+   },
    -- nvim-dap-virtual-text: This plugin adds virtual text support to nvim-dap.
-   'theHamsta/nvim-dap-virtual-text',
-   -- nvim-dap-go:  An extension for nvim-dap providing configurations for
-   -- launching go debugger (delve) and debugging individual tests
-   'leoluz/nvim-dap-go',
+   {
+      'theHamsta/nvim-dap-virtual-text',
+      dependencies = {
+         -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
+         'mfussenegger/nvim-dap',
+         -- nvim-dap-go:  An extension for nvim-dap providing configurations for
+         -- launching go debugger (delve) and debugging individual tests
+         'leoluz/nvim-dap-go',
+      },
+   },
 
    -- repl
    -- ^^^^
@@ -118,7 +154,4 @@ return {
    -- lualine.nvim: A blazing fast and easy to configure neovim statusline
    -- plugin written in pure lua.
    'nvim-lualine/lualine.nvim',
-
-   -- dracula.nvim: Dracula colorscheme for neovim written in Lua
-   'gsax/dracula.nvim',
 }
