@@ -1,4 +1,4 @@
-require('dep')({
+return {
    -- A use-package inspired plugin manager for Neovim. Uses native packages,
    -- supports Luarocks dependencies, written in Lua, allows for expressive
    -- config
@@ -13,7 +13,7 @@ require('dep')({
    -- code actions, and more via Lua.
    {
       'jose-elias-alvarez/null-ls.nvim',
-      requires = { 'nvim-lua/plenary.nvim' },
+      dependencies = { 'nvim-lua/plenary.nvim' },
    },
 
    -- completion sources
@@ -36,7 +36,7 @@ require('dep')({
    -- Find, Filter, Preview, Pick. All lua, all the time.
    {
       'nvim-telescope/telescope.nvim',
-      requires = { 'nvim-lua/plenary.nvim' },
+      dependencies = { 'nvim-lua/plenary.nvim' },
    },
 
    -- 🥪 An alternative sudo.vim for Vim and
@@ -49,15 +49,13 @@ require('dep')({
    -- help-vsplit: Open Neovim help in vertical split if there is enough space
    {
       'anuvyklack/help-vsplit.nvim',
-      function()
-         require('help-vsplit').setup({})
-      end,
+      config = true,
    },
 
    -- neogit: magit for neovim
    {
       'TimUntersberger/neogit',
-      requires = {
+      dependencies = {
          'nvim-lua/plenary.nvim',
          'sindrets/diffview.nvim',
       },
@@ -96,9 +94,7 @@ require('dep')({
    -- left-right/up-down motions, hooks, and more
    {
       'numToStr/Comment.nvim',
-      function()
-         require('Comment').setup({})
-      end,
+      config = true,
    },
 
    -- nvim-align: Neovim plugin for aligning text
@@ -107,18 +103,14 @@ require('dep')({
    -- autopairs for neovim written by lua
    {
       'windwp/nvim-autopairs',
-      function()
-         require('nvim-autopairs').setup({})
-      end,
+      config = true,
    },
 
    -- nvim-surround: Add/change/delete surrounding delimiter pairs with ease.
    -- Written with heart in Lua.
    {
       'kylechui/nvim-surround',
-      function()
-         require('nvim-surround').setup({})
-      end,
+      config = true,
    },
 
    -- appereance
@@ -129,4 +121,4 @@ require('dep')({
 
    -- dracula.nvim: Dracula colorscheme for neovim written in Lua
    'gsax/dracula.nvim',
-}) --
+}

@@ -8,7 +8,9 @@ vim.g.maplocalleader = '\\'
 
 -- first load all plugins, but load setup and config the plugins at last
 require('bootstrap')
-require('plugins')
+-- require('plugins')
+
+require('lazy').setup('packages')
 
 -- language providers
 --"""""""""""""""""""
