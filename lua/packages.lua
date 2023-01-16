@@ -89,9 +89,6 @@ return {
       build = ':TSInstall all',
    },
 
-   -- aniseed: Neovim configuration and plugins in Fennel (Lisp compiled to Lua)
-   'Olical/aniseed',
-
    -- debugger
    -- ^^^^^^^^
    -- nvim-dap-ui: A UI for nvim-dap
@@ -100,8 +97,8 @@ return {
       dependencies = {
          -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
          'mfussenegger/nvim-dap',
-         -- nvim-dap-go:  An extension for nvim-dap providing configurations for
-         -- launching go debugger (delve) and debugging individual tests
+         -- nvim-dap-go:  An extension for nvim-dap providing configurations
+         -- for launching go debugger (delve) and debugging individual tests
          'leoluz/nvim-dap-go',
       },
    },
@@ -111,8 +108,8 @@ return {
       dependencies = {
          -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
          'mfussenegger/nvim-dap',
-         -- nvim-dap-go:  An extension for nvim-dap providing configurations for
-         -- launching go debugger (delve) and debugging individual tests
+         -- nvim-dap-go:  An extension for nvim-dap providing configurations
+         -- for launching go debugger (delve) and debugging individual tests
          'leoluz/nvim-dap-go',
       },
    },
