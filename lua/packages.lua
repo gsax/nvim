@@ -86,7 +86,7 @@ return {
    -- nvim-treesitter: Nvim Treesitter configurations and abstraction layer
    {
       'nvim-treesitter/nvim-treesitter',
-      build = ':TSInstall all',
+      build = { ':TSInstall all', ':TSUpdate' },
    },
 
    -- debugger
