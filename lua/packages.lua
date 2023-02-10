@@ -1,11 +1,10 @@
-return {
+require('dep')({
    -- set colorscheme first, so it is applied everywhere correctly
    -- dracula.nvim: Dracula colorscheme for neovim written in Lua
    {
       'gsax/dracula.nvim',
-      lazy = false,
-      priority = 1000,
-      config = function()
+      function()
+         require('dracularc')
          vim.cmd.colorscheme('dracula')
       end,
    },
@@ -25,8 +24,7 @@ return {
    -- A completion plugin for neovim coded in Lua.
    {
       'hrsh7th/nvim-cmp',
-      event = 'InsertEnter',
-      dependencies = {
+      requires = {
          -- completion sources
          'andersevenrud/cmp-tmux',
          'hrsh7th/cmp-buffer',
@@ -76,7 +74,7 @@ return {
    -- for all modified files for any git rev.
    {
       'sindrets/diffview.nvim',
-      dependencies = {
+      requires = {
          'nvim-lua/plenary.nvim',
       },
    },
@@ -86,7 +84,10 @@ return {
    -- nvim-treesitter: Nvim Treesitter configurations and abstraction layer
    {
       'nvim-treesitter/nvim-treesitter',
-      build = { ':TSInstall all', ':TSUpdate' },
+      config = function()
+         vim.cmd('TSInstall all')
+         vim.cmd('TSUpdate')
+      end,
    },
 
    -- debugger
@@ -94,7 +95,7 @@ return {
    -- nvim-dap-ui: A UI for nvim-dap
    {
       'rcarriga/nvim-dap-ui',
-      dependencies = {
+      requires = {
          -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
          'mfussenegger/nvim-dap',
          -- nvim-dap-go:  An extension for nvim-dap providing configurations
@@ -105,7 +106,7 @@ return {
    -- nvim-dap-virtual-text: This plugin adds virtual text support to nvim-dap.
    {
       'theHamsta/nvim-dap-virtual-text',
-      dependencies = {
+      requires = {
          -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
          'mfussenegger/nvim-dap',
          -- nvim-dap-go:  An extension for nvim-dap providing configurations
@@ -151,4 +152,4 @@ return {
    -- lualine.nvim: A blazing fast and easy to configure neovim statusline
    -- plugin written in pure lua.
    'nvim-lualine/lualine.nvim',
-}
+})

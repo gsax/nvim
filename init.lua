@@ -3,10 +3,10 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
--- install lazy
+-- install dep
 require('bootstrap')
 -- load all plugins
-require('lazy').setup('packages')
+require('packages')
 
 -- language providers
 --"""""""""""""""""""
