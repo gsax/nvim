@@ -1,9 +1,4 @@
 require('dep')({
-   -- A use-package inspired plugin manager for Neovim. Uses native packages,
-   -- supports Luarocks dependencies, written in Lua, allows for expressive
-   -- config
-   --  use('wbthomason/packer.nvim')
-
    -- lsp and completion
    -- ^^^^^^^^^^^^^^^^^^
    -- nvim-lspconfig: Quickstart configurations for the Nvim LSP client
@@ -16,17 +11,21 @@ require('dep')({
       requires = { 'nvim-lua/plenary.nvim' },
    },
 
-   -- completion sources
-   'hrsh7th/cmp-nvim-lsp',
-   'hrsh7th/cmp-buffer',
-   'hrsh7th/cmp-path',
-   'hrsh7th/cmp-cmdline',
-   'saadparwaiz1/cmp_luasnip',
-   'ray-x/cmp-treesitter',
-   'andersevenrud/cmp-tmux',
-   'hrsh7th/cmp-nvim-lua',
    -- A completion plugin for neovim coded in Lua.
-   'hrsh7th/nvim-cmp',
+   {
+      'hrsh7th/nvim-cmp',
+      requires = {
+         -- completion sources
+         'andersevenrud/cmp-tmux',
+         'hrsh7th/cmp-buffer',
+         'hrsh7th/cmp-cmdline',
+         'hrsh7th/cmp-nvim-lsp',
+         'hrsh7th/cmp-nvim-lua',
+         'hrsh7th/cmp-path',
+         'ray-x/cmp-treesitter',
+         'saadparwaiz1/cmp_luasnip',
+      },
+   },
 
    --  -- Snippet Engine for Neovim written in Lua.
    'L3MON4D3/LuaSnip',
@@ -63,25 +62,50 @@ require('dep')({
       },
    },
 
+   -- diffview: Single tabpage interface for easily cycling through diffs
+   -- for all modified files for any git rev.
+   {
+      'sindrets/diffview.nvim',
+      requires = {
+         'nvim-lua/plenary.nvim',
+      },
+   },
+
    -- filetypes and languages
    -- ^^^^^^^^^^^^^^^^^^^^^^^
    -- nvim-treesitter: Nvim Treesitter configurations and abstraction layer
-   'nvim-treesitter/nvim-treesitter',
-
-   -- aniseed: Neovim configuration and plugins in Fennel (Lisp compiled to Lua)
-   'Olical/aniseed',
+   {
+      'nvim-treesitter/nvim-treesitter',
+      config = function()
+         vim.cmd('TSInstall all')
+         vim.cmd('TSUpdate')
+      end,
+   },
 
    -- debugger
    -- ^^^^^^^^
-   -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
-   'mfussenegger/nvim-dap',
    -- nvim-dap-ui: A UI for nvim-dap
-   'rcarriga/nvim-dap-ui',
+   {
+      'rcarriga/nvim-dap-ui',
+      requires = {
+         -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
+         'mfussenegger/nvim-dap',
+         -- nvim-dap-go:  An extension for nvim-dap providing configurations
+         -- for launching go debugger (delve) and debugging individual tests
+         'leoluz/nvim-dap-go',
+      },
+   },
    -- nvim-dap-virtual-text: This plugin adds virtual text support to nvim-dap.
-   'theHamsta/nvim-dap-virtual-text',
-   -- nvim-dap-go:  An extension for nvim-dap providing configurations for
-   -- launching go debugger (delve) and debugging individual tests
-   'leoluz/nvim-dap-go',
+   {
+      'theHamsta/nvim-dap-virtual-text',
+      requires = {
+         -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
+         'mfussenegger/nvim-dap',
+         -- nvim-dap-go:  An extension for nvim-dap providing configurations
+         -- for launching go debugger (delve) and debugging individual tests
+         'leoluz/nvim-dap-go',
+      },
+   },
 
    -- repl
    -- ^^^^
