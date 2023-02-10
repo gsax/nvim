@@ -46,10 +46,6 @@ elseif vim.fn.exists('+guicolors') == 1 then
    vim.opt.guicolors = true
 end
 
--- set colorscheme and activate background opacity
-require('dracularc')
-vim.cmd.colorscheme('dracula')
-
 -- split config
 --"""""""""""""
 -- vsplit for diffsplit

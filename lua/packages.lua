@@ -1,4 +1,14 @@
 require('dep')({
+   -- set colorscheme first, so it is applied everywhere correctly
+   -- dracula.nvim: Dracula colorscheme for neovim written in Lua
+   {
+      'gsax/dracula.nvim',
+      function()
+         require('dracularc')
+         vim.cmd.colorscheme('dracula')
+      end,
+   },
+
    -- lsp and completion
    -- ^^^^^^^^^^^^^^^^^^
    -- nvim-lspconfig: Quickstart configurations for the Nvim LSP client
@@ -150,7 +160,4 @@ require('dep')({
    -- lualine.nvim: A blazing fast and easy to configure neovim statusline
    -- plugin written in pure lua.
    'nvim-lualine/lualine.nvim',
-
-   -- dracula.nvim: Dracula colorscheme for neovim written in Lua
-   'gsax/dracula.nvim',
-}) --
+})
