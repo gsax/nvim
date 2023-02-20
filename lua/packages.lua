@@ -58,7 +58,9 @@ require('dep')({
    -- help-vsplit: Open Neovim help in vertical split if there is enough space
    {
       'anuvyklack/help-vsplit.nvim',
-      config = true,
+      function()
+         require('help-vsplit').setup()
+      end,
    },
 
    -- neogit: magit for neovim
@@ -128,7 +130,9 @@ require('dep')({
    -- left-right/up-down motions, hooks, and more
    {
       'numToStr/Comment.nvim',
-      config = true,
+      function()
+         require('Comment').setup()
+      end,
    },
 
    -- nvim-align: Neovim plugin for aligning text
@@ -137,14 +141,18 @@ require('dep')({
    -- autopairs for neovim written by lua
    {
       'windwp/nvim-autopairs',
-      config = true,
+      function()
+         require('nvim-autopairs').setup()
+      end,
    },
 
    -- nvim-surround: Add/change/delete surrounding delimiter pairs with ease.
    -- Written with heart in Lua.
    {
       'kylechui/nvim-surround',
-      config = true,
+      function()
+         require('nvim-surround').setup()
+      end,
    },
 
    -- appereance
