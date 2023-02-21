@@ -1,4 +1,6 @@
 require('dep')({
+   -- appereance
+   -- ^^^^^^^^^^
    -- set colorscheme first, so it is applied everywhere correctly
    -- dracula.nvim: Dracula colorscheme for neovim written in Lua
    {
@@ -8,6 +10,9 @@ require('dep')({
          vim.cmd.colorscheme('dracula')
       end,
    },
+   -- lualine.nvim: A blazing fast and easy to configure neovim statusline
+   -- plugin written in pure lua.
+   'nvim-lualine/lualine.nvim',
 
    -- lsp and completion
    -- ^^^^^^^^^^^^^^^^^^
@@ -63,6 +68,8 @@ require('dep')({
       end,
    },
 
+   -- git
+   -- ^^^
    -- neogit: magit for neovim
    {
       'TimUntersberger/neogit',
@@ -154,10 +161,4 @@ require('dep')({
          require('nvim-surround').setup()
       end,
    },
-
-   -- appereance
-   -- ^^^^^^^^^^
-   -- lualine.nvim: A blazing fast and easy to configure neovim statusline
-   -- plugin written in pure lua.
-   'nvim-lualine/lualine.nvim',
 })
