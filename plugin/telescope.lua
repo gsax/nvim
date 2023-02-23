@@ -1,12 +1,25 @@
 -- keybindings for telescope
--- set nnoremap and silent for all keybindings
-local opts = { noremap = true, silent = true }
 
 -- search for files in the current directory
-vim.api.nvim_set_keymap('n', '<leader>l', '<cmd>Telescope find_files<CR>', opts)
+vim.keymap.set(
+   'n',
+   '<leader>l',
+   require('telescope.builtin').find_files,
+   { desc = 'Search all Files' }
+)
 
 -- search for files under source control
-vim.api.nvim_set_keymap('n', '<leader>p', '<cmd>Telescope git_files<CR>', opts)
+vim.keymap.set(
+   'n',
+   '<leader>p',
+   require('telescope.builtin').git_files,
+   { desc = 'Search Files in git' }
+)
 
 -- search for open buffers
-vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>Telescope buffers<CR>', opts)
+vim.keymap.set(
+   'n',
+   '<leader>b',
+   require('telescope.builtin').buffers,
+   { desc = 'Find existing buffers' }
+)

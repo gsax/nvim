@@ -48,40 +48,76 @@ require('dapui').setup()
 require('nvim-dap-virtual-text').setup()
 
 -- keybindings
-local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap(
+vim.keymap.set(
    'n',
    '<F2>',
-   "<cmd>lua require'dapui'.toggle()<CR>",
-   opts
+   require('dapui').toggle,
+   { desc = 'Toggle Debugger' }
 )
-vim.api.nvim_set_keymap(
+vim.keymap.set(
    'n',
    '<F5>',
-   "<cmd>lua require'dap'.continue()<CR>",
-   opts
+   require('dap').continue,
+   { desc = 'Debugger continue' }
 )
-vim.api.nvim_set_keymap(
+vim.keymap.set(
    'n',
    '<F6>',
-   "<cmd>lua require'dap'.toggle_breakpoint()<CR>",
-   opts
+   require('dap').toggle_breakpoint,
+   { desc = 'Debugger toggle breakpiont' }
 )
-vim.api.nvim_set_keymap(
+vim.keymap.set(
    'n',
    '<F10>',
-   "<cmd>lua require'dap'.step_over()<CR>",
-   opts
+   require('dap').step_over,
+   { desc = 'Debugger step over' }
 )
-vim.api.nvim_set_keymap(
+vim.keymap.set(
    'n',
    '<F11>',
-   "<cmd>lua require'dap'.step_into()<CR>",
-   opts
+   require('dap').step_into,
+   { desc = 'Debugger step into' }
 )
-vim.api.nvim_set_keymap(
+vim.keymap.set(
    'n',
    '<F12>',
-   "<cmd>lua require'dap'.step_out()<CR>",
-   opts
+   require('dap').step_out,
+   { desc = 'Debugger step out' }
+)
+
+vim.keymap.set(
+   'n',
+   '<leader>ds',
+   require('dapui').toggle,
+   { desc = 'Toggle Debugger' }
+)
+vim.keymap.set(
+   'n',
+   '<leader>dc',
+   require('dap').continue,
+   { desc = 'Debugger continue' }
+)
+vim.keymap.set(
+   'n',
+   '<leader>db',
+   require('dap').toggle_breakpoint,
+   { desc = 'Debugger toggle breakpiont' }
+)
+vim.keymap.set(
+   'n',
+   '<leader>do',
+   require('dap').step_over,
+   { desc = 'Debugger step over' }
+)
+vim.keymap.set(
+   'n',
+   '<leader>di',
+   require('dap').step_into,
+   { desc = 'Debugger step into' }
+)
+vim.keymap.set(
+   'n',
+   '<leader>dx',
+   require('dap').step_out,
+   { desc = 'Debugger step out' }
 )
