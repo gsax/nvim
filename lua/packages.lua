@@ -51,7 +51,12 @@ require('dep')({
    },
 
    -- Snippet Engine for Neovim written in Lua.
-   'L3MON4D3/LuaSnip',
+   {
+      'L3MON4D3/LuaSnip',
+      function()
+         require('luasnip.loaders.from_snipmate').load()
+      end,
+   },
 
    -- files and buffers
    -- ^^^^^^^^^^^^^^^^^
