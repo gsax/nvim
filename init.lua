@@ -92,6 +92,9 @@ if vim.fn.executable('rg') == 1 then
    vim.o.grepprg = 'rg --vimgrep'
 end
 
+-- enable break indent
+vim.o.breakindent = true
+
 -- better listchars
 vim.opt.showbreak = '↪'
 vim.opt.listchars = {
