@@ -10,6 +10,26 @@ wk.register({ c = { name = 'comments' } }, { prefix = '<leader>' })
 wk.register({ d = { name = 'debugger' } }, { prefix = '<leader>' })
 wk.register({ s = { name = 'telescope' } }, { prefix = '<leader>' })
 
+-- toggle linenumbers
+local toggle_line_numbers = function()
+   if not vim.wo.number and not vim.wo.relativenumber then
+      vim.wo.number = 1
+      vim.wo.relativenumber = 0
+   elseif vim.o.number and not vim.wo.relativenumber then
+      vim.wo.number = 1
+      vim.wo.relativenumber = 1
+   else
+      vim.wo.number = 0
+      vim.wo.relativenumber = 0
+   end
+end
+vim.keymap.set(
+   'n',
+   '<leader>n',
+   toggle_line_numbers,
+   { desc = 'toggle line[n]umbers' }
+)
+
 -- telescope
 -- search for files in the current directory
 vim.keymap.set(
