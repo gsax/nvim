@@ -6,8 +6,9 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- set catagories for which-key
 local wk = require('which-key')
-wk.register({ s = { name = 'telescope' } }, { prefix = '<leader>' })
+wk.register({ c = { name = 'comments' } }, { prefix = '<leader>' })
 wk.register({ d = { name = 'debugger' } }, { prefix = '<leader>' })
+wk.register({ s = { name = 'telescope' } }, { prefix = '<leader>' })
 
 -- telescope
 -- search for files in the current directory
@@ -51,6 +52,36 @@ vim.keymap.set(
    '<leader>sd',
    require('telescope.builtin').diagnostics,
    { desc = '[s]earch [d]iagnostics' }
+)
+
+-- comments
+-- toggle linewise comments
+vim.keymap.set('n', '<leader>cc', function()
+   return vim.v.count == 0 and '<Plug>(comment_toggle_linewise_current)'
+      or '<Plug>(comment_toggle_linewise_count)'
+end, { expr = true, desc = 'toggle linewise [c]omment' })
+vim.keymap.set(
+   'n',
+   '<leader>c',
+   '<Plug>(comment_toggle_linewise)',
+   { desc = 'toggle linewise [c]omment' }
+)
+vim.keymap.set(
+   'x',
+   '<leader>cc',
+   '<Plug>(comment_toggle_linewise_visual)',
+   { desc = 'toggle linewise [c]omment' }
+)
+-- toggle blockwise comments
+vim.keymap.set('n', '<leader>cb', function()
+   return vim.v.count == 0 and '<Plug>(comment_toggle_blockwise_current)'
+      or '<Plug>(comment_toggle_blockwise_count)'
+end, { expr = true, desc = 'toggle [b]lockwise comment' })
+vim.keymap.set(
+   'x',
+   '<leader>cb',
+   '<Plug>(comment_toggle_blockwise_visual)',
+   { desc = 'toggle [b]lockwise comment' }
 )
 
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

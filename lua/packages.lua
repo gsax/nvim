@@ -152,7 +152,7 @@ require('dep')({
    {
       'numToStr/Comment.nvim',
       function()
-         require('Comment').setup()
+         require('Comment').setup({ mappings = false, extra = false })
       end,
    },
 
