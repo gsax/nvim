@@ -6,8 +6,8 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- set catagories for which-key
 local wk = require('which-key')
-wk.register({ s = { name = '[s] telescope' } }, { prefix = '<leader>' })
-wk.register({ d = { name = '[d] debugger' } }, { prefix = '<leader>' })
+wk.register({ s = { name = 'telescope' } }, { prefix = '<leader>' })
+wk.register({ d = { name = 'debugger' } }, { prefix = '<leader>' })
 
 -- telescope
 -- search for files in the current directory
@@ -15,28 +15,28 @@ vim.keymap.set(
    'n',
    '<leader>l',
    require('telescope.builtin').find_files,
-   { desc = '[l] search all files' }
+   { desc = 'search all files' }
 )
 -- search for files under source control
 vim.keymap.set(
    'n',
    '<leader>p',
    require('telescope.builtin').git_files,
-   { desc = '[p] search files in git' }
+   { desc = 'search files in git' }
 )
 -- search for open buffers
 vim.keymap.set(
    'n',
    '<leader>b',
    require('telescope.builtin').buffers,
-   { desc = '[b] find existing buffers' }
+   { desc = 'find existing [b]uffers' }
 )
 -- find recently opened files
 vim.keymap.set(
    'n',
    '<leader>?',
    require('telescope.builtin').oldfiles,
-   { desc = '[?] find recently opened files' }
+   { desc = 'find recently opened files' }
 )
 -- search helpfiles
 vim.keymap.set(
@@ -58,25 +58,25 @@ vim.keymap.set(
    'n',
    '<leader>e',
    vim.diagnostic.open_float,
-   { desc = '[e] show diagnostics in floating window' }
+   { desc = 'show diagnostics in floating window' }
 )
 vim.keymap.set(
    'n',
    '[d',
    vim.diagnostic.goto_prev,
-   { desc = '[[] go to previous [d]iagnostic' }
+   { desc = 'go to previous [d]iagnostic' }
 )
 vim.keymap.set(
    'n',
    ']d',
    vim.diagnostic.goto_next,
-   { desc = '[]] go to next [d]iagnostic' }
+   { desc = 'go to next [d]iagnostic' }
 )
 vim.keymap.set(
    'n',
    '<leader>q',
    vim.diagnostic.setloclist,
-   { desc = '[q] add diagnostics to location list' }
+   { desc = 'add diagnostics to location list' }
 )
 
 -- null-ls keymaps
@@ -84,7 +84,7 @@ OnNullLsAttach = function(_, bufnr)
    local bufopts = { noremap = true, silent = true, buffer = bufnr }
    vim.keymap.set('n', '<leader>f', function()
       vim.lsp.buf.format({ async = true })
-   end, { desc = '[f] format current buffer' }, bufopts)
+   end, { desc = '[f]ormat current buffer' }, bufopts)
 end
 
 -- lsp keymaps
@@ -92,30 +92,45 @@ OnLSPAttach = function(_, bufnr)
    -- Enable completion triggered by <c-x><c-o>
    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
+   -- Define small helper and utility functions so you don't have to repeat
+   -- yourself many times.
+   local nmap = function(keys, func, desc)
+      if desc then
+         desc = 'LSP: ' .. desc
+      end
+      vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+   end
+
    -- See `:help vim.lsp.*` for documentation on any of the below functions
-   local bufopts = { noremap = true, silent = true, buffer = bufnr }
-   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-   vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-   vim.keymap.set(
-      'n',
+   nmap('gD', vim.lsp.buf.declaration, '[g]oto [D]eclaration')
+   nmap('gd', vim.lsp.buf.definition, '[g]oto [d]efinition')
+   nmap('K', vim.lsp.buf.hover, 'hover documentation')
+   nmap('gi', vim.lsp.buf.implementation, '[g]oto [i]mplementation')
+   nmap('<C-k>', vim.lsp.buf.signature_help, 'signature documentation')
+   nmap(
+      '<leader>wa',
+      vim.lsp.buf.add_workspace_folder,
+      '[w]orkspace [a]dd Folder'
+   )
+   nmap(
       '<leader>wr',
       vim.lsp.buf.remove_workspace_folder,
-      bufopts
+      '[w]orkspace [r]emove Folder'
    )
-   vim.keymap.set('n', '<leader>wl', function()
+   nmap('<leader>wl', function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-   end, bufopts)
-   vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
-   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-   vim.keymap.set('n', '<leader>f', function()
+   end, '[w]orkspace [l]ist Folders')
+   nmap('<leader>D', vim.lsp.buf.type_definition, 'type [D]efinition')
+   nmap('<leader>rn', vim.lsp.buf.rename, '[r]e[n]ame')
+   nmap('<leader>ca', vim.lsp.buf.code_action, '[c]ode [a]ction')
+   nmap(
+      'gr',
+      require('telescope.builtin').lsp_references,
+      '[g]oto [r]eferences'
+   )
+   nmap('<leader>f', function()
       vim.lsp.buf.format({ async = true })
-   end, { desc = '[f] format current buffer' }, bufopts)
+   end, '[f]ormat current buffer')
 end
 
 -- debug adapter
