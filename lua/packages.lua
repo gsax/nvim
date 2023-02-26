@@ -31,7 +31,7 @@ require('dep')({
    -- code actions, and more via Lua.
    {
       'jose-elias-alvarez/null-ls.nvim',
-      dependencies = { 'nvim-lua/plenary.nvim' },
+      requires = { 'nvim-lua/plenary.nvim' },
    },
 
    -- A completion plugin for neovim coded in Lua.
@@ -63,7 +63,7 @@ require('dep')({
    -- Find, Filter, Preview, Pick. All lua, all the time.
    {
       'nvim-telescope/telescope.nvim',
-      dependencies = { 'nvim-lua/plenary.nvim' },
+      requires = { 'nvim-lua/plenary.nvim' },
    },
 
    -- 🥪 An alternative sudo.vim for Vim and
@@ -86,7 +86,7 @@ require('dep')({
    -- neogit: magit for neovim
    {
       'TimUntersberger/neogit',
-      dependencies = {
+      requires = {
          'nvim-lua/plenary.nvim',
          'sindrets/diffview.nvim',
       },
