@@ -13,14 +13,14 @@ wk.register({ s = { name = 'telescope' } }, { prefix = '<leader>' })
 -- toggle linenumbers
 local toggle_line_numbers = function()
    if not vim.wo.number and not vim.wo.relativenumber then
-      vim.wo.number = 1
-      vim.wo.relativenumber = 0
+      vim.wo.number = true
+      vim.wo.relativenumber = false
    elseif vim.o.number and not vim.wo.relativenumber then
-      vim.wo.number = 1
-      vim.wo.relativenumber = 1
+      vim.wo.number = true
+      vim.wo.relativenumber = true
    else
-      vim.wo.number = 0
-      vim.wo.relativenumber = 0
+      vim.wo.number = false
+      vim.wo.relativenumber = false
    end
 end
 vim.keymap.set(

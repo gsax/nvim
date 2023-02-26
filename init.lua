@@ -40,9 +40,9 @@ vim.o.signcolumn = 'yes'
 vim.o.scrolloff = 2
 
 -- activate TrueColor support
-if vim.fn.exists('+termguicolors') == 1 then
+if vim.fn.exists('+termguicolors') then
    vim.opt.termguicolors = true
-elseif vim.fn.exists('+guicolors') == 1 then
+elseif vim.fn.exists('+guicolors') then
    vim.opt.guicolors = true
 end
 
@@ -88,7 +88,7 @@ vim.o.showmode = false
 vim.o.mouse = ''
 
 -- use ripgrep as grepprg if installed
-if vim.fn.executable('rg') == 1 then
+if vim.fn.executable('rg') then
    vim.o.grepprg = 'rg --vimgrep'
 end
 
@@ -110,7 +110,7 @@ vim.opt.listchars = {
 -- filetypes
 --""""""""""
 -- set filetype to c for header (*.h) files, cannot be set in the c ftplugin
-vim.g.c_syntax_for_h = 1
+vim.g.c_syntax_for_h = true
 
 -- allow embedded syntax highlight for lua
 vim.g.vimsyn_embed = 'lPr'
