@@ -1,4 +1,7 @@
 require('dep')({
+   -- manage dep itself
+   'chiyadev/dep',
+
    -- appereance
    -- ^^^^^^^^^^
    -- set colorscheme first, so it is applied everywhere correctly
@@ -10,6 +13,7 @@ require('dep')({
          vim.cmd.colorscheme('dracula')
       end,
    },
+
    -- lualine.nvim: A blazing fast and easy to configure neovim statusline
    -- plugin written in pure lua.
    'nvim-lualine/lualine.nvim',
@@ -42,7 +46,7 @@ require('dep')({
       },
    },
 
-   --  -- Snippet Engine for Neovim written in Lua.
+   -- Snippet Engine for Neovim written in Lua.
    'L3MON4D3/LuaSnip',
 
    -- files and buffers
@@ -112,6 +116,7 @@ require('dep')({
          'leoluz/nvim-dap-go',
       },
    },
+
    -- nvim-dap-virtual-text: This plugin adds virtual text support to nvim-dap.
    {
       'theHamsta/nvim-dap-virtual-text',
