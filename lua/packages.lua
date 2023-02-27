@@ -27,6 +27,10 @@ require('dep')({
    -- nvim-lspconfig: Quickstart configurations for the Nvim LSP client
    'neovim/nvim-lspconfig',
 
+   -- neodev.nvim: computer Neovim setup for init.lua and plugin development
+   -- with full signature help, docs and completion for the nvim lua API.
+   'folke/neodev.nvim',
+
    -- null-ls: Use Neovim as a language server to inject LSP diagnostics,
    -- code actions, and more via Lua.
    {
