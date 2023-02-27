@@ -8,7 +8,7 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 local wk = require('which-key')
 wk.register({ c = { name = 'comments' } }, { prefix = '<leader>' })
 wk.register({ d = { name = 'debugger' } }, { prefix = '<leader>' })
-wk.register({ s = { name = 'telescope' } }, { prefix = '<leader>' })
+wk.register({ s = { name = 'search' } }, { prefix = '<leader>' })
 wk.register({ w = { name = 'workspace' } }, { prefix = '<leader>' })
 
 -- toggle linenumbers
@@ -32,47 +32,39 @@ vim.keymap.set(
 )
 
 -- telescope
--- search for files in the current directory
-vim.keymap.set(
-   'n',
-   '<leader>l',
-   require('telescope.builtin').find_files,
-   { desc = 'search all files' }
-)
+local search_map = function(keys, func, desc)
+   if desc then
+      desc = 'Search: ' .. desc
+   end
+   vim.keymap.set('n', keys, func, { desc = desc })
+end
+-- search files in the current directory
+search_map('<leader>sf', require('telescope.builtin').find_files, 'all [f]iles')
 -- search for files under source control
-vim.keymap.set(
-   'n',
-   '<leader>p',
+search_map(
+   '<leader>sg',
    require('telescope.builtin').git_files,
-   { desc = 'search files in git' }
+   'tracked by [g]it'
 )
--- search for open buffers
-vim.keymap.set(
-   'n',
-   '<leader>b',
+-- search open buffers
+search_map(
+   '<leader>sb',
    require('telescope.builtin').buffers,
-   { desc = 'find existing [b]uffers' }
+   'existing [b]uffers'
 )
--- find recently opened files
-vim.keymap.set(
-   'n',
-   '<leader>?',
+-- search recently opened files
+search_map(
+   '<leader>sr',
    require('telescope.builtin').oldfiles,
-   { desc = 'find recently opened files' }
+   '[r]ecently opened files'
 )
 -- search helpfiles
-vim.keymap.set(
-   'n',
-   '<leader>sh',
-   require('telescope.builtin').help_tags,
-   { desc = '[s]earch [h]elp' }
-)
+search_map('<leader>sh', require('telescope.builtin').help_tags, '[h]elp')
 -- search lsp diagnostices
-vim.keymap.set(
-   'n',
+search_map(
    '<leader>sd',
    require('telescope.builtin').diagnostics,
-   { desc = '[s]earch [d]iagnostics' }
+   '[d]iagnostics'
 )
 
 -- comments
@@ -194,11 +186,7 @@ local dap_map = function(keys, func, desc)
 end
 
 dap_map('<leader>dt', require('dapui').toggle, '[t]oggle dap-ui')
-dap_map(
-   '<leader>db',
-   require('dap').toggle_breakpoint,
-   'toggle [b]reakpiont'
-)
+dap_map('<leader>db', require('dap').toggle_breakpoint, 'toggle [b]reakpiont')
 dap_map('<leader>dc', require('dap').continue, '[c]ontinue')
 dap_map('<leader>dn', require('dap').step_over, '[n]ext/step over')
 dap_map('<leader>ds', require('dap').step_into, '[s]tep into')
