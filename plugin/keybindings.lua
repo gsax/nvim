@@ -9,7 +9,6 @@ local wk = require('which-key')
 wk.register({ c = { name = 'comments' } }, { prefix = '<leader>' })
 wk.register({ d = { name = 'debugger' } }, { prefix = '<leader>' })
 wk.register({ s = { name = 'search' } }, { prefix = '<leader>' })
-wk.register({ w = { name = 'workspace' } }, { prefix = '<leader>' })
 
 -- toggle linenumbers
 local toggle_line_numbers = function()
@@ -100,12 +99,6 @@ vim.keymap.set(
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set(
    'n',
-   '<leader>e',
-   vim.diagnostic.open_float,
-   { desc = 'show diagnostics in floating window' }
-)
-vim.keymap.set(
-   'n',
    '[d',
    vim.diagnostic.goto_prev,
    { desc = 'go to previous [d]iagnostic' }
@@ -115,6 +108,12 @@ vim.keymap.set(
    ']d',
    vim.diagnostic.goto_next,
    { desc = 'go to next [d]iagnostic' }
+)
+vim.keymap.set(
+   'n',
+   '<leader>e',
+   vim.diagnostic.open_float,
+   { desc = 'show diagnostics in floating window' }
 )
 vim.keymap.set(
    'n',
@@ -145,12 +144,30 @@ OnLSPAttach = function(_, bufnr)
       vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
    end
 
+   -- set catagories for which-key
+   wk.register({ l = { name = 'LSP' } }, { prefix = '<leader>' })
+   wk.register({ w = { name = 'workspace' } }, { prefix = '<leader>' })
+
    -- See `:help vim.lsp.*` for documentation on any of the below functions
-   lsp_map('gD', vim.lsp.buf.declaration, '[g]oto [D]eclaration')
-   lsp_map('gd', vim.lsp.buf.definition, '[g]oto [d]efinition')
    lsp_map('K', vim.lsp.buf.hover, 'hover documentation')
-   lsp_map('gi', vim.lsp.buf.implementation, '[g]oto [i]mplementation')
    lsp_map('<C-k>', vim.lsp.buf.signature_help, 'signature documentation')
+   lsp_map('<leader>ld', vim.lsp.buf.definition, 'goto [d]efinition')
+   lsp_map('<leader>lD', vim.lsp.buf.declaration, 'goto [D]eclaration')
+   lsp_map('<leader>li', vim.lsp.buf.implementation, 'goto [i]mplementation')
+   lsp_map('<leader>lt', vim.lsp.buf.type_definition, '[t]ype definition')
+   lsp_map('<leader>lr', vim.lsp.buf.rename, '[r]ename')
+   lsp_map('<leader>la', vim.lsp.buf.code_action, 'code [a]ction')
+   lsp_map(
+      '<leader>lR',
+      require('telescope.builtin').lsp_references,
+      'goto [R]eferences'
+   )
+   lsp_map(
+      '<leader>ls',
+      require('telescope.builtin').lsp_document_symbols,
+      'document [s]ymbols'
+   )
+   -- workspaces
    lsp_map(
       '<leader>wa',
       vim.lsp.buf.add_workspace_folder,
@@ -164,14 +181,12 @@ OnLSPAttach = function(_, bufnr)
    lsp_map('<leader>wl', function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
    end, '[w]orkspace [l]ist Folders')
-   lsp_map('<leader>D', vim.lsp.buf.type_definition, 'type [D]efinition')
-   lsp_map('<leader>rn', vim.lsp.buf.rename, '[r]e[n]ame')
-   lsp_map('<leader>ca', vim.lsp.buf.code_action, '[c]ode [a]ction')
    lsp_map(
-      'gr',
-      require('telescope.builtin').lsp_references,
-      '[g]oto [r]eferences'
+      '<leader>ws',
+      require('telescope.builtin').lsp_dynamic_workspace_symbols,
+      '[w]orkspace [s]ymbols'
    )
+   -- format
    lsp_map('<leader>f', function()
       vim.lsp.buf.format({ async = true })
    end, '[f]ormat current buffer')
