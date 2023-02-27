@@ -124,10 +124,9 @@ vim.keymap.set(
 
 -- null-ls keymaps
 OnNullLsAttach = function(_, bufnr)
-   local bufopts = { noremap = true, silent = true, buffer = bufnr }
    vim.keymap.set('n', '<leader>f', function()
       vim.lsp.buf.format({ async = true })
-   end, { desc = '[f]ormat current buffer' }, bufopts)
+   end, { buffer = bufnr, desc = '[f]ormat current buffer' })
 end
 
 -- lsp keymaps
