@@ -9,6 +9,7 @@ local wk = require('which-key')
 wk.register({ c = { name = 'comments' } }, { prefix = '<leader>' })
 wk.register({ d = { name = 'debugger' } }, { prefix = '<leader>' })
 wk.register({ s = { name = 'telescope' } }, { prefix = '<leader>' })
+wk.register({ w = { name = 'workspace' } }, { prefix = '<leader>' })
 
 -- toggle linenumbers
 local toggle_line_numbers = function()
@@ -145,7 +146,7 @@ OnLSPAttach = function(_, bufnr)
 
    -- Define small helper and utility functions so you don't have to repeat
    -- yourself many times.
-   local nmap = function(keys, func, desc)
+   local lsp_map = function(keys, func, desc)
       if desc then
          desc = 'LSP: ' .. desc
       end
@@ -153,108 +154,52 @@ OnLSPAttach = function(_, bufnr)
    end
 
    -- See `:help vim.lsp.*` for documentation on any of the below functions
-   nmap('gD', vim.lsp.buf.declaration, '[g]oto [D]eclaration')
-   nmap('gd', vim.lsp.buf.definition, '[g]oto [d]efinition')
-   nmap('K', vim.lsp.buf.hover, 'hover documentation')
-   nmap('gi', vim.lsp.buf.implementation, '[g]oto [i]mplementation')
-   nmap('<C-k>', vim.lsp.buf.signature_help, 'signature documentation')
-   nmap(
+   lsp_map('gD', vim.lsp.buf.declaration, '[g]oto [D]eclaration')
+   lsp_map('gd', vim.lsp.buf.definition, '[g]oto [d]efinition')
+   lsp_map('K', vim.lsp.buf.hover, 'hover documentation')
+   lsp_map('gi', vim.lsp.buf.implementation, '[g]oto [i]mplementation')
+   lsp_map('<C-k>', vim.lsp.buf.signature_help, 'signature documentation')
+   lsp_map(
       '<leader>wa',
       vim.lsp.buf.add_workspace_folder,
       '[w]orkspace [a]dd Folder'
    )
-   nmap(
+   lsp_map(
       '<leader>wr',
       vim.lsp.buf.remove_workspace_folder,
       '[w]orkspace [r]emove Folder'
    )
-   nmap('<leader>wl', function()
+   lsp_map('<leader>wl', function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
    end, '[w]orkspace [l]ist Folders')
-   nmap('<leader>D', vim.lsp.buf.type_definition, 'type [D]efinition')
-   nmap('<leader>rn', vim.lsp.buf.rename, '[r]e[n]ame')
-   nmap('<leader>ca', vim.lsp.buf.code_action, '[c]ode [a]ction')
-   nmap(
+   lsp_map('<leader>D', vim.lsp.buf.type_definition, 'type [D]efinition')
+   lsp_map('<leader>rn', vim.lsp.buf.rename, '[r]e[n]ame')
+   lsp_map('<leader>ca', vim.lsp.buf.code_action, '[c]ode [a]ction')
+   lsp_map(
       'gr',
       require('telescope.builtin').lsp_references,
       '[g]oto [r]eferences'
    )
-   nmap('<leader>f', function()
+   lsp_map('<leader>f', function()
       vim.lsp.buf.format({ async = true })
    end, '[f]ormat current buffer')
 end
 
 -- debug adapter
-vim.keymap.set(
-   'n',
-   '<F2>',
-   require('dapui').toggle,
-   { desc = 'toggle debugger' }
-)
-vim.keymap.set(
-   'n',
-   '<F5>',
-   require('dap').continue,
-   { desc = 'debugger continue' }
-)
-vim.keymap.set(
-   'n',
-   '<F6>',
-   require('dap').toggle_breakpoint,
-   { desc = 'debugger toggle breakpiont' }
-)
-vim.keymap.set(
-   'n',
-   '<F10>',
-   require('dap').step_over,
-   { desc = 'debugger step over' }
-)
-vim.keymap.set(
-   'n',
-   '<F11>',
-   require('dap').step_into,
-   { desc = 'debugger step into' }
-)
-vim.keymap.set(
-   'n',
-   '<F12>',
-   require('dap').step_out,
-   { desc = 'debugger step out' }
-)
+local dap_map = function(keys, func, desc)
+   if desc then
+      desc = 'DAP: ' .. desc
+   end
+   vim.keymap.set('n', keys, func, { desc = desc })
+end
 
-vim.keymap.set(
-   'n',
-   '<leader>dt',
-   require('dapui').toggle,
-   { desc = '[d]ebugger [t]oggle' }
-)
-vim.keymap.set(
-   'n',
+dap_map('<leader>dt', require('dapui').toggle, '[t]oggle dap-ui')
+dap_map(
    '<leader>db',
    require('dap').toggle_breakpoint,
-   { desc = '[d]ebugger toggle [b]reakpiont' }
+   'toggle [b]reakpiont'
 )
-vim.keymap.set(
-   'n',
-   '<leader>dc',
-   require('dap').continue,
-   { desc = '[d]ebugger [c]ontinue' }
-)
-vim.keymap.set(
-   'n',
-   '<leader>dn',
-   require('dap').step_over,
-   { desc = '[d]ebugger step over/[n]ext' }
-)
-vim.keymap.set(
-   'n',
-   '<leader>ds',
-   require('dap').step_into,
-   { desc = '[d]ebugger step into/[s]tep' }
-)
-vim.keymap.set(
-   'n',
-   '<leader>df',
-   require('dap').step_out,
-   { desc = '[d]ebugger step out/[f]inish' }
-)
+dap_map('<leader>dc', require('dap').continue, '[c]ontinue')
+dap_map('<leader>dn', require('dap').step_over, '[n]ext/step over')
+dap_map('<leader>ds', require('dap').step_into, '[s]tep into')
+dap_map('<leader>df', require('dap').step_out, '[f]inish/step out')
