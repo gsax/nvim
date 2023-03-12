@@ -7,7 +7,7 @@ if vim.fn.empty(vim.fn.glob(path)) > 0 then
       'git',
       'clone',
       '--depth=1',
-      'https://github.com/chiyadev/dep',
+      'https://github.com/gsax/dep',
       path,
    })
 end

@@ -1,7 +1,4 @@
 require('dep')({
-   -- manage dep itself
-   'chiyadev/dep',
-
    -- appereance
    -- ^^^^^^^^^^
    -- set colorscheme first, so it is applied everywhere correctly
