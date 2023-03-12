@@ -154,12 +154,12 @@ OnLSPAttach = function(_, bufnr)
    lsp_map('<leader>lD', vim.lsp.buf.declaration, 'goto [D]eclaration')
    lsp_map('<leader>li', vim.lsp.buf.implementation, 'goto [i]mplementation')
    lsp_map('<leader>lt', vim.lsp.buf.type_definition, '[t]ype definition')
-   lsp_map('<leader>lr', vim.lsp.buf.rename, '[r]ename')
+   lsp_map('<leader>lR', vim.lsp.buf.rename, '[R]ename')
    lsp_map('<leader>la', vim.lsp.buf.code_action, 'code [a]ction')
    lsp_map(
-      '<leader>lR',
+      '<leader>lr',
       require('telescope.builtin').lsp_references,
-      'goto [R]eferences'
+      'goto [r]eferences'
    )
    lsp_map(
       '<leader>ls',
