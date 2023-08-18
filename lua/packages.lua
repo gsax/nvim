@@ -108,10 +108,6 @@ require('dep')({
    {
       'nvim-treesitter/nvim-treesitter',
       deps = { 'nvim-treesitter/nvim-treesitter-textobjects' },
-      config = function()
-         vim.cmd.TSInstall({ 'all' })
-         vim.cmd('TSUpdate')
-      end,
    },
 
    -- debugger
