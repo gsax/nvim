@@ -144,8 +144,8 @@ OnLSPAttach = function(_, bufnr)
    end
 
    -- set catagories for which-key
-   wk.register({ l = { name = 'LSP' } }, { prefix = '<leader>' })
-   wk.register({ w = { name = 'workspace' } }, { prefix = '<leader>' })
+   wk.register({ l = { name = 'LSP', buffer = 0 } }, { prefix = '<leader>' })
+   wk.register({ w = { name = 'workspace', buffer = 0 } }, { prefix = '<leader>' })
 
    -- See `:help vim.lsp.*` for documentation on any of the below functions
    lsp_map('K', vim.lsp.buf.hover, 'hover documentation')
