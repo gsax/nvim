@@ -118,6 +118,8 @@ require('dep')({
       requires = {
          -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
          'mfussenegger/nvim-dap',
+         -- nvim-nio: A library for asynchronous IO in Neovim 
+         'nvim-neotest/nvim-nio',
          -- nvim-dap-go:  An extension for nvim-dap providing configurations
          -- for launching go debugger (delve) and debugging individual tests
          'leoluz/nvim-dap-go',
