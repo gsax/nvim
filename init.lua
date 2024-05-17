@@ -63,6 +63,11 @@ vim.o.incsearch = true
 -- don't highlight search permanent
 vim.o.hlsearch = false
 
+-- Case-insensitive searching UNLESS \C or one
+-- or more capital letters in the search term
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
 -- enable the autocompletion menu
 vim.o.wildmenu = true
 
@@ -80,6 +85,9 @@ vim.o.showcmd = true
 
 -- don't lose undo history after switching buffers
 vim.o.hidden = true
+
+-- Save undo history
+vim.opt.undofile = true
 
 -- don't show mode
 vim.o.showmode = false
