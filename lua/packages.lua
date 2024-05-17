@@ -4,14 +4,15 @@ require('dep')({
    -- set colorscheme first, so it is applied everywhere correctly
    -- dracula.nvim: Dracula colorscheme for neovim written in Lua
    {
-      'gsax/dracula.nvim',
+      'scottmckendry/cyberdream.nvim',
       function()
          -- require('dracularc')
-         require('dracula').setup({
-            show_end_of_buffer = true,
-            transparent_bg = true,
+         require('cyberdream').setup({
+            transparent = true,
+            italic_comments =true,
+            terminal_colors = true,
          })
-         vim.cmd.colorscheme('dracula')
+         vim.cmd.colorscheme('cyberdream')
       end,
    },
 
