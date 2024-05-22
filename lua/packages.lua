@@ -88,7 +88,6 @@ require('dep')({
    -- neogit: magit for neovim
    {
       'TimUntersberger/neogit',
-      pin = true,
       requires = {
          'nvim-lua/plenary.nvim',
          'sindrets/diffview.nvim',
