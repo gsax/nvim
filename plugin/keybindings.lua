@@ -6,9 +6,9 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- set catagories for which-key
 local wk = require('which-key')
-wk.register({ c = { name = 'comments' } }, { prefix = '<leader>' })
-wk.register({ d = { name = 'debugger' } }, { prefix = '<leader>' })
-wk.register({ s = { name = 'search' } }, { prefix = '<leader>' })
+wk.add({ '<leader>c', group = 'comments' })
+wk.add({ '<leader>d', group = 'debugger' })
+wk.add({ '<leader>s', group = 'search' })
 
 -- toggle linenumbers
 local toggle_line_numbers = function()
@@ -144,8 +144,8 @@ OnLSPAttach = function(_, bufnr)
    end
 
    -- set catagories for which-key
-   wk.register({ l = { name = 'LSP', buffer = 0 } }, { prefix = '<leader>' })
-   wk.register({ w = { name = 'workspace', buffer = 0 } }, { prefix = '<leader>' })
+   wk.add({ '<leader>l', group = 'LSP' })
+   wk.add({ '<leader>w', group = 'workspace' })
 
    -- See `:help vim.lsp.*` for documentation on any of the below functions
    lsp_map('K', vim.lsp.buf.hover, 'hover documentation')
