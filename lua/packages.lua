@@ -9,7 +9,7 @@ require('dep')({
          -- require('dracularc')
          require('cyberdream').setup({
             transparent = true,
-            italic_comments =true,
+            italic_comments = true,
             terminal_colors = true,
          })
          vim.cmd.colorscheme('cyberdream')
@@ -30,7 +30,7 @@ require('dep')({
    'folke/neodev.nvim',
 
    -- none-ls: null-ls.nvim reloaded / Use Neovim as a language server to
-   -- inject LSP diagnostics, code actions, and more via Lua. 
+   -- inject LSP diagnostics, code actions, and more via Lua.
    {
       'nvimtools/none-ls.nvim',
       requires = { 'nvim-lua/plenary.nvim' },
@@ -100,6 +100,7 @@ require('dep')({
       'sindrets/diffview.nvim',
       requires = {
          'nvim-lua/plenary.nvim',
+         'nvim-tree/nvim-web-devicons',
       },
    },
 
@@ -119,7 +120,7 @@ require('dep')({
       requires = {
          -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
          'mfussenegger/nvim-dap',
-         -- nvim-nio: A library for asynchronous IO in Neovim 
+         -- nvim-nio: A library for asynchronous IO in Neovim
          'nvim-neotest/nvim-nio',
          -- nvim-dap-go:  An extension for nvim-dap providing configurations
          -- for launching go debugger (delve) and debugging individual tests
@@ -184,6 +185,10 @@ require('dep')({
    -- of the command you started typing.
    {
       'folke/which-key.nvim',
+      requires = {
+         'nvim-tree/nvim-web-devicons',
+         'echasnovski/mini.icons',
+      },
       function()
          vim.o.timeout = true
          vim.o.timeoutlen = 300
