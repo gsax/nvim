@@ -10,7 +10,8 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(
 local servers =
    { 'clangd', 'eslint', 'julials', 'rust_analyzer', 'vimls', 'zls' }
 for _, lsp in pairs(servers) do
-   require('lspconfig')[lsp].setup({
+   -- require('lspconfig')[lsp].setup({
+   vim.lsp.config(lsp, {
       on_attach = OnLSPAttach,
       capabilities = capabilities,
       flags = {
@@ -20,7 +21,8 @@ for _, lsp in pairs(servers) do
    })
 end
 -- gopls go language server, config from go.nvim
-require('lspconfig').gopls.setup({
+-- require('lspconfig').gopls.setup({
+vim.lsp.config('gopls', {
    on_attach = OnLSPAttach,
    capabilities = capabilities,
    flags = {
@@ -52,7 +54,8 @@ require('lspconfig').gopls.setup({
 })
 
 -- the sumneko_lua lua language server
-require('lspconfig').lua_ls.setup({
+-- require('lspconfig').lua_ls.setup({
+vim.lsp.config('lua_ls', {
    on_attach = OnLSPAttach,
    capabilities = capabilities,
    flags = {
