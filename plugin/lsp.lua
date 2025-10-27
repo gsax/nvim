@@ -8,27 +8,19 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(
    vim.lsp.protocol.make_client_capabilities()
 )
 local servers =
-   { 'clangd', 'eslint', 'julials', 'rust_analyzer', 'vimls', 'zls' }
+   { 'clangd', 'rust_analyzer', 'vimls', 'zls' }
 for _, lsp in pairs(servers) do
-   -- require('lspconfig')[lsp].setup({
    vim.lsp.config(lsp, {
       on_attach = OnLSPAttach,
       capabilities = capabilities,
-      flags = {
-         -- This will be the default in neovim 0.7+
-         debounce_text_changes = 150,
-      },
    })
+   vim.lsp.enable(lsp)
 end
+
 -- gopls go language server, config from go.nvim
--- require('lspconfig').gopls.setup({
 vim.lsp.config('gopls', {
    on_attach = OnLSPAttach,
    capabilities = capabilities,
-   flags = {
-      -- This will be the default in neovim 0.7+
-      debounce_text_changes = 150,
-   },
    settings = {
       gopls = {
          analyses = { unusedparams = true, unreachable = false },
@@ -53,24 +45,45 @@ vim.lsp.config('gopls', {
    },
 })
 
--- the sumneko_lua lua language server
--- require('lspconfig').lua_ls.setup({
+-- LuaLS: A language server that offers Lua language support - programmed in Lua
+-- config from :help lspconfig-all
 vim.lsp.config('lua_ls', {
    on_attach = OnLSPAttach,
    capabilities = capabilities,
-   flags = {
-      -- This will be the default in neovim 0.7+
-      debounce_text_changes = 150,
-   },
+   on_init = function(client)
+      if client.workspace_folders then
+         local path = client.workspace_folders[1].name
+         if
+            path ~= vim.fn.stdpath('config')
+            and (
+               vim.uv.fs_stat(path .. '/.luarc.json')
+               or vim.uv.fs_stat(path .. '/.luarc.jsonc')
+            )
+         then
+            return
+         end
+      end
+
+      client.config.settings.Lua =
+         vim.tbl_deep_extend('force', client.config.settings.Lua, {
+            runtime = {
+               version = 'LuaJIT',
+               path = {
+                  'lua/?.lua',
+                  'lua/?/init.lua',
+               },
+            },
+            workspace = {
+               checkThirdParty = false,
+               library = {
+                  vim.env.VIMRUNTIME,
+               },
+            },
+         })
+   end,
    settings = {
       Lua = {
-         -- disable format, will use stylua with null-ls
          format = {
-            enable = false,
-         },
-         -- Do not send telemetry data containing a randomized
-         -- but unique identifier
-         telemetry = {
             enable = false,
          },
       },
