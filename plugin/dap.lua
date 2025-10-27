@@ -38,9 +38,6 @@ dap.configurations.cpp = dap.configurations.c
 dap.configurations.rust = dap.configurations.c
 dap.configurations.zig = dap.configurations.c
 
--- load nvim-dap-go for go debugging with delve
-require('dap-go').setup()
-
 -- load nvim-dap-ui
 require('dapui').setup()
 

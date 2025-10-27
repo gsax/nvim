@@ -17,34 +17,6 @@ for _, lsp in pairs(servers) do
    vim.lsp.enable(lsp)
 end
 
--- gopls go language server, config from go.nvim
-vim.lsp.config('gopls', {
-   on_attach = OnLSPAttach,
-   capabilities = capabilities,
-   settings = {
-      gopls = {
-         analyses = { unusedparams = true, unreachable = false },
-         codelenses = {
-            generate = true,
-            gc_details = true,
-            test = true,
-            tidy = true,
-         },
-         usePlaceholders = true,
-         completeUnimported = true,
-         staticcheck = true,
-         matcher = 'Fuzzy',
-         diagnosticsDelay = '500ms',
-         experimentalWatchedFileDelay = '100ms',
-         symbolMatcher = 'fuzzy',
-         ['local'] = '',
-         gofumpt = true,
-         -- buildFlags = { '-tags', 'integration' },
-         -- buildFlags = {"-tags", "functional"}
-      },
-   },
-})
-
 -- LuaLS: A language server that offers Lua language support - programmed in Lua
 -- config from :help lspconfig-all
 vim.lsp.config('lua_ls', {
