@@ -1,0 +1,430 @@
+-- require('dep')({
+--    -- appereance
+--    -- ^^^^^^^^^^
+--    -- set colorscheme first, so it is applied everywhere correctly
+--    -- dracula.nvim: Dracula colorscheme for neovim written in Lua
+--    {
+--       'scottmckendry/cyberdream.nvim',
+--       function()
+--          -- require('dracularc')
+--          require('cyberdream').setup({
+--             transparent = true,
+--             italic_comments = true,
+--             terminal_colors = true,
+--          })
+--          vim.cmd.colorscheme('cyberdream')
+--       end,
+--    },
+--
+--    -- lualine.nvim: A blazing fast and easy to configure neovim statusline
+--    -- plugin written in pure lua.
+--    'nvim-lualine/lualine.nvim',
+--
+--    -- lsp and completion
+--    -- ^^^^^^^^^^^^^^^^^^
+--    -- nvim-lspconfig: Quickstart configurations for the Nvim LSP client
+--    'neovim/nvim-lspconfig',
+--
+--    -- neodev.nvim: computer Neovim setup for init.lua and plugin development
+--    -- with full signature help, docs and completion for the nvim lua API.
+--    'folke/neodev.nvim',
+--
+--    -- none-ls: null-ls.nvim reloaded / Use Neovim as a language server to
+--    -- inject LSP diagnostics, code actions, and more via Lua.
+--    {
+--       'nvimtools/none-ls.nvim',
+--       requires = { 'nvim-lua/plenary.nvim' },
+--    },
+--
+--    -- A completion plugin for neovim coded in Lua.
+--    {
+--       'hrsh7th/nvim-cmp',
+--       requires = {
+--          -- completion sources
+--          'andersevenrud/cmp-tmux',
+--          'hrsh7th/cmp-buffer',
+--          'hrsh7th/cmp-cmdline',
+--          'hrsh7th/cmp-nvim-lsp',
+--          'hrsh7th/cmp-nvim-lua',
+--          'hrsh7th/cmp-path',
+--          'ray-x/cmp-treesitter',
+--          'saadparwaiz1/cmp_luasnip',
+--       },
+--    },
+--
+--    -- Snippet Engine for Neovim written in Lua.
+--    {
+--       'L3MON4D3/LuaSnip',
+--       function()
+--          require('luasnip.loaders.from_snipmate').load()
+--       end,
+--    },
+--
+--    -- files and buffers
+--    -- ^^^^^^^^^^^^^^^^^
+--    -- Find, Filter, Preview, Pick. All lua, all the time.
+--    {
+--       'nvim-telescope/telescope.nvim',
+--       requires = { 'nvim-lua/plenary.nvim' },
+--    },
+--
+--    -- 🥪 An alternative sudo.vim for Vim and
+--    -- Neovim, limited support sudo in Windows
+--    'lambdalisue/suda.vim',
+--
+--    -- bufdelete.nvim: Delete Neovim buffers without losing window layout
+--    'famiu/bufdelete.nvim',
+--
+--    -- help-vsplit: Open Neovim help in vertical split if there is enough space
+--    {
+--       'anuvyklack/help-vsplit.nvim',
+--       function()
+--          require('help-vsplit').setup()
+--       end,
+--    },
+--
+--    -- git
+--    -- ^^^
+--    -- neogit: magit for neovim
+--    {
+--       'TimUntersberger/neogit',
+--       requires = {
+--          'nvim-lua/plenary.nvim',
+--          'sindrets/diffview.nvim',
+--       },
+--    },
+--
+--    -- diffview: Single tabpage interface for easily cycling through diffs
+--    -- for all modified files for any git rev.
+--    {
+--       'sindrets/diffview.nvim',
+--       requires = {
+--          'nvim-lua/plenary.nvim',
+--          'nvim-tree/nvim-web-devicons',
+--       },
+--    },
+--
+--    -- filetypes and languages
+--    -- ^^^^^^^^^^^^^^^^^^^^^^^
+--    -- nvim-treesitter: Nvim Treesitter configurations and abstraction layer
+--    {
+--       'nvim-treesitter/nvim-treesitter',
+--       deps = { 'nvim-treesitter/nvim-treesitter-textobjects' },
+--    },
+--
+--    -- debugger
+--    -- ^^^^^^^^
+--    -- nvim-dap-ui: A UI for nvim-dap
+--    {
+--       'rcarriga/nvim-dap-ui',
+--       requires = {
+--          -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
+--          'mfussenegger/nvim-dap',
+--          -- nvim-nio: A library for asynchronous IO in Neovim
+--          'nvim-neotest/nvim-nio',
+--       },
+--    },
+--
+--    -- nvim-dap-virtual-text: This plugin adds virtual text support to nvim-dap.
+--    {
+--       'theHamsta/nvim-dap-virtual-text',
+--       requires = {
+--          -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
+--          'mfussenegger/nvim-dap',
+--       },
+--    },
+--
+--    -- repl
+--    -- ^^^^
+--    -- Conjure: Interactive evaluation for Neovim
+--    -- (Clojure, Fennel, Janet, Racket, Hy, MIT Scheme, Guile)
+--    'Olical/conjure',
+--
+--    -- editing
+--    -- ^^^^^^^
+--    -- Comment: brain muscle // Smart and powerful comment plugin for neovim.
+--    -- Supports treesitter, dot repeat,
+--    -- left-right/up-down motions, hooks, and more
+--    {
+--       'numToStr/Comment.nvim',
+--       function()
+--          require('Comment').setup({ mappings = false, extra = false })
+--       end,
+--    },
+--
+--    -- nvim-align: Neovim plugin for aligning text
+--    'RRethy/nvim-align',
+--
+--    -- autopairs for neovim written by lua
+--    {
+--       'windwp/nvim-autopairs',
+--       function()
+--          require('nvim-autopairs').setup()
+--       end,
+--    },
+--
+--    -- nvim-surround: Add/change/delete surrounding delimiter pairs with ease.
+--    -- Written with heart in Lua.
+--    {
+--       'kylechui/nvim-surround',
+--       function()
+--          require('nvim-surround').setup()
+--       end,
+--    },
+--
+--    -- UI
+--    -- ^^
+--    -- which-key.nvim: boom Create key bindings that stick. WhichKey is a lua
+--    -- plugin for Neovim 0.5 that displays a popup with possible keybindings
+--    -- of the command you started typing.
+--    {
+--       'folke/which-key.nvim',
+--       requires = {
+--          'nvim-tree/nvim-web-devicons',
+--          'echasnovski/mini.icons',
+--       },
+--       function()
+--          vim.o.timeout = true
+--          vim.o.timeoutlen = 300
+--          require('which-key').setup()
+--       end,
+--    },
+-- })
+
+-- Setup lazy.nvim
+-- require('lazy').setup({
+
+return {
+   -- appereance
+   -- ^^^^^^^^^^
+   -- set colorscheme first, so it is applied everywhere correctly
+   -- cyberdream.nvim: 🤖💤 High-contrast, Futuristic & Vibrant Neovim Colorscheme
+   -- {
+   --    'scottmckendry/cyberdream.nvim',
+   --    lazy = false,
+   --    priority = 1000,
+   --    opts = {
+   --       transparent = true,
+   --       italic_comments = true,
+   --       terminal_colors = true,
+   --    },
+   --    config = function(_, opts)
+   --       require('cyberdream').setup(opts)
+   --       vim.cmd.colorscheme('cyberdream')
+   --    end,
+   -- },
+
+   -- lualine.nvim: A blazing fast and easy to configure neovim statusline plugin written in pure lua.
+   -- {
+   --    'nvim-lualine/lualine.nvim',
+   --    dependencies = { 'nvim-tree/nvim-web-devicons' },
+   --    opts = { import = 'plugins.lualine' },
+--       opts = {
+--    options = {
+--       icons_enabled = true,
+--       theme = 'cyberdream',
+--       component_separators = '',
+--       section_separators = '',
+--       disabled_filetypes = {
+--          statusline = {},
+--          winbar = {},
+--       },
+--       ignore_focus = {},
+--       always_divide_middle = true,
+--       globalstatus = false,
+--       refresh = {
+--          statusline = 1000,
+--          tabline = 1000,
+--          winbar = 1000,
+--       },
+--    },
+--    sections = {
+--       lualine_a = { 'mode' },
+--       lualine_b = { 'branch' },
+--       lualine_c = {
+--          {
+--             'filename',
+--             path = 1,
+--             symbols = {
+--                modified = ' +',
+--                readonly = ' ',
+--             },
+--          },
+--       },
+--       lualine_x = {
+--          { 'filetype', separator = '|' },
+--          { 'encoding', separator = '|' },
+--          { 'fileformat', icons_enabled = false },
+--       },
+--       lualine_y = { 'location' },
+--       lualine_z = { 'progress' },
+--    },
+--    inactive_sections = {
+--       lualine_a = {},
+--       lualine_b = {
+--          {
+--             'filename',
+--             path = 1,
+--             symbols = {
+--                modified = ' +',
+--                readonly = ' ',
+--             },
+--          },
+--       },
+--       lualine_c = {},
+--       lualine_x = {},
+--       lualine_y = {},
+--       lualine_z = {
+--          { 'filetype', separator = '|' },
+--          { 'encoding', separator = '|' },
+--          { 'fileformat', icons_enabled = false },
+--       },
+--    },
+--    tabline = {},
+--    winbar = {},
+--    inactive_winbar = {},
+--    extensions = {},
+-- }
+
+   -- },
+
+   -- lsp and completion
+   -- ^^^^^^^^^^^^^^^^^^
+   -- nvim-lspconfig: Quickstart configs for Nvim LSP
+   -- {
+   --    'neovim/nvim-lspconfig',
+   --    dependencies = { 'j-hui/fidget.nvim' },
+   --    config = function()
+   --       require('plugins.lsp')
+   --    end,
+   -- },
+
+   -- lazydev.nvim: Faster LuaLS setup for Neovim
+   -- {
+   --    'folke/lazydev.nvim',
+   --    ft = 'lua',
+   --    opts = {
+   --       library = {
+   --          { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+   --       },
+   --    },
+   -- },
+
+   -- none-ls.nvim: null-ls.nvim reloaded / Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
+   -- {
+   --    'nvimtools/none-ls.nvim',
+   --    dependencies = { 'nvim-lua/plenary.nvim' },
+   --    config = function()
+   --       require('plugins.null-ls')
+   --    end
+   -- },
+
+--    {
+--    'stevearc/conform.nvim',
+--    cmd = {'ConformInfo'},
+--    keys = {{ '<leader>f',
+--    function ()
+--       require('conform').format { async = true, lsp_format = 'fallback' }
+--    end,
+--            mode = '',
+--         desc = '[F]ormat buffer',
+--      },},
+--    opts ={import = 'plugins/conform' }
+-- },
+
+   -- blink.cmp: Performant, batteries-included completion plugin for Neovim
+   -- {
+   --    'saghen/blink.cmp',
+   --    dependencies = { 'folke/lazydev.nvim' },
+   --    opts = { { import = 'plugins/blink.lua' }
+   --       -- sources = {
+   --       --    default = {
+   --       --       'lazydev',
+   --       --       'lsp',
+   --       --       'path',
+   --       --       'snippets',
+   --       --       'buffer',
+   --       --       'omni',
+   --       --    },
+   --       --    providers = {
+   --       --       lazydev = {
+   --       --          name = 'LazyDev',
+   --       --          module = 'lazydev.integrations.blink',
+   --       --          score_offset = 100,
+   --       --       },
+   --       --    },
+   --       -- },
+   --       -- fuzzy = { implementation = 'prefer_rust_with_warning' },
+   --       -- signature = { enable = true },
+   --    },
+   -- },
+
+   -- files and buffers
+   -- ^^^^^^^^^^^^^^^^^
+   -- telescope.nvim: Find, Filter, Preview, Pick. All lua, all the time.
+   -- {
+   --    'nvim-telescope/telescope.nvim',
+   --    dependencies = { 'nvim-lua/plenary.nvim' },
+   -- },
+
+   -- buffexit.nvim: A Neovim plugin providing user-friendly replacements for "bdelete" and "bwipeout"
+   -- {
+   --    'N8WM/buffexit.nvim',
+   --    opts = {},
+   -- },
+
+   -- -- help-vsplit.nvim: Open Neovim help in vertical split if there is enough space
+   -- {
+   --    'anuvyklack/help-vsplit.nvim',
+   --    opts = {},
+   -- },
+
+   -- filetypes and languages
+   -- ^^^^^^^^^^^^^^^^^^^^^^^
+   -- nvim-treesitter: Nvim Treesitter configurations and abstraction layer
+   -- {
+   --    'nvim-treesitter/nvim-treesitter',
+   --    dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
+   --    opts = { import = 'plugins.treesitter' },
+   -- },
+
+   -- debugger
+   -- ^^^^^^^^
+   -- -- nvim-dap: Debug Adapter Protocol client implementation for Neovim
+   -- 'https://codeberg.org/mfussenegger/nvim-dap',
+   --
+   -- -- nvim-dap-ui: A UI for nvim-dap
+   -- {
+   --    'rcarriga/nvim-dap-ui',
+   --    dependencies = {
+   --       'https://codeberg.org/mfussenegger/nvim-dap',
+   --       'nvim-neotest/nvim-nio',
+   --    },
+   --    config = function()
+   --       require('plugins.dap')
+   --    end
+   -- },
+   --
+   -- editing
+   -- ^^^^^^^
+   -- Comment.nvim: 🧠 💪 // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
+   -- {
+   --    'numToStr/Comment.nvim',
+   --    opts = {
+   --       mappings = false,
+   --       extra = false,
+   --    },
+   -- },
+
+   -- nvim-align: Neovim plugin for aligning text
+   -- 'RRethy/nvim-align',
+
+   -- UI
+   -- ^^
+   -- which-key.nvim: 💥 Create key bindings that stick. WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
+   -- {
+   --    'folke/which-key.nvim',
+   --    event = 'VeryLazy',
+   --    dependencies = { 'nvim-tree/nvim-web-devicons' },
+   -- },
+}

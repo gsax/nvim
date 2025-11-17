@@ -1,2 +1,2 @@
-.luarc.json
-packer_compiled.lua
+# direnv cache
+.direnv/
