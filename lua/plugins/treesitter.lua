@@ -2,6 +2,8 @@ return {
    {
       'nvim-treesitter/nvim-treesitter',
       dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
+      main = 'nvim-treesitter.configs',
+      build = ':TSUpdate',
       opts = {
          -- enable treesitter highlighting for all languages
          highlight = {
