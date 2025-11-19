@@ -2,6 +2,7 @@ return {
    {
       'saghen/blink.cmp',
       dependencies = { 'folke/lazydev.nvim' },
+      version = '1.*',
       opts = {
          sources = {
             default = {
