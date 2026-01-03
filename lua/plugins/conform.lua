@@ -17,6 +17,9 @@ return {
       opts = {
          formatters_by_ft = {
             c = { 'clang-format' },
+            elixir = { 'mix' },
+            html = { 'djlint' },
+            htmldjango = { 'djlint' },
             lua = { 'stylua' },
             nix = { 'nixfmt' },
             rust = { 'rustfmt' },

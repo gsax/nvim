@@ -20,8 +20,11 @@ return {
          -- list all servers
          local servers = {
             clangd = true,
-            rust_analyzer = true,
+            elixirls = true,
+            emmet_language_server = true,
+            jinja_lsp = { filetypes = { 'jinja', 'htmldjango' } },
             lua_ls = true,
+            rust_analyzer = true,
          }
 
          -- Set global capabilities for all LSP servers
