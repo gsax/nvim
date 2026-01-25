@@ -28,6 +28,7 @@
           pkgs = import nixpkgs { inherit system; };
           runDeps = with pkgs; [
             lua-language-server
+            nixfmt
             stylua
           ];
         in
