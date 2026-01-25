@@ -17,14 +17,17 @@ return {
       config = function()
          -- set blink capabilities
          local capabilities = require('blink.cmp').get_lsp_capabilities()
-         -- list all servers
+         -- list all servers with their executable names
          local servers = {
-            clangd = true,
-            elixirls = true,
-            emmet_language_server = true,
-            jinja_lsp = { filetypes = { 'jinja', 'htmldjango' } },
-            lua_ls = true,
-            rust_analyzer = true,
+            clangd = { executable = 'clangd' },
+            elixirls = { executable = 'elixirls' },
+            emmet_language_server = { executable = 'emmet-language-server' },
+            jinja_lsp = {
+               executable = 'jinja-lsp',
+               filetypes = { 'jinja', 'htmldjango' },
+            },
+            lua_ls = { executable = 'lua-language-server' },
+            rust_analyzer = { executable = 'rust-analyzer' },
          }
 
          -- Set global capabilities for all LSP servers
@@ -34,28 +37,20 @@ return {
 
          -- Configure and enable each LSP server
          for name, config in pairs(servers) do
-            if config == true then
-               config = {}
-            end
-
-            -- Only call vim.lsp.config if there are server-specific settings
-            if next(config) ~= nil then
+            local executable = config.executable
+            -- Check if executable exists in $PATH
+            if vim.fn.executable(executable) == 1 then
                local lsp_config = vim.tbl_deep_extend('force', {}, config)
-               vim.lsp.config(name, lsp_config)
+               lsp_config.executable = nil -- Remove the executable key before passing to lsp.config
+
+               -- Only call vim.lsp.config if there are server-specific settings
+               if next(lsp_config) ~= nil then
+                  vim.lsp.config(name, lsp_config)
+               end
+
+               vim.lsp.enable(name)
             end
-
-            vim.lsp.enable(name)
          end
-
-         -- for server_name, server_executable in pairs(servers) do
-         --    if vim.fn.executable(server_executable) == 1 then
-         --       vim.lsp.config(server_name, {
-         --          on_attach = OnLSPAttach,
-         --          -- capabilities = capabilities,
-         --       })
-         --       vim.lsp.enable(server_name)
-         --    end
-         -- end
       end,
    },
 }
