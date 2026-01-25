@@ -22,7 +22,7 @@ return {
             },
          },
          fuzzy = { implementation = 'prefer_rust_with_warning' },
-         signature = { enable = true },
+         signature = { enabled = true },
       },
    },
 }
