@@ -1,24 +1,39 @@
-
 {
   description = "nvim dotfiles";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, utils, ... }:
-    utils.lib.eachDefaultSystem (
-      system: let
-        pkgs = import nixpkgs {inherit system;};
-        runDeps = with pkgs; [
-          lua-language-server
-          stylua
-        ];
-      in {
-        devShells.default = pkgs.mkShell rec {
-          buildInputs = runDeps;
-        };
-      }
-    );
+  outputs =
+    { self, nixpkgs }:
+    let
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+      forAllSystems =
+        f:
+        builtins.listToAttrs (
+          map (system: {
+            name = system;
+            value = f system;
+          }) systems
+        );
+    in
+    {
+      devShells = forAllSystems (
+        system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+          runDeps = with pkgs; [
+            lua-language-server
+            stylua
+          ];
+        in
+        {
+          default = pkgs.mkShell { buildInputs = runDeps; };
+        }
+      );
+    };
 }
