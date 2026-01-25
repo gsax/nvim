@@ -99,18 +99,6 @@ vim.keymap.set(
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set(
    'n',
-   '[d',
-   vim.diagnostic.goto_prev,
-   { desc = 'go to previous [d]iagnostic' }
-)
-vim.keymap.set(
-   'n',
-   ']d',
-   vim.diagnostic.goto_next,
-   { desc = 'go to next [d]iagnostic' }
-)
-vim.keymap.set(
-   'n',
    '<leader>e',
    vim.diagnostic.open_float,
    { desc = 'show diagnostics in floating window' }
