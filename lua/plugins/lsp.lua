@@ -27,7 +27,16 @@ return {
                filetypes = { 'jinja', 'htmldjango' },
             },
             lua_ls = { executable = 'lua-language-server' },
-            rust_analyzer = { executable = 'rust-analyzer' },
+            rust_analyzer = {
+               executable = 'rust-analyzer',
+               settings = {
+                  ['rust-analyzer'] = {
+                     check = {
+                        command = 'clippy',
+                     },
+                  },
+               },
+            },
          }
 
          -- Set global capabilities for all LSP servers
