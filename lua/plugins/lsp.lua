@@ -38,6 +38,7 @@ return {
                   },
                },
             },
+            tinymist = { executable = 'tinymist' },
             tombi = { executable = 'tombi' },
          }
 

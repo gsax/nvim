@@ -23,6 +23,7 @@ return {
             lua = { 'stylua' },
             nix = { 'nixfmt' },
             rust = { 'rustfmt' },
+            typst = { 'typstyle' },
          },
       },
    },
