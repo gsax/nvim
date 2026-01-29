@@ -27,6 +27,7 @@ return {
                filetypes = { 'jinja', 'htmldjango' },
             },
             lua_ls = { executable = 'lua-language-server' },
+            nixd = { executable = 'nixd' },
             rust_analyzer = {
                executable = 'rust-analyzer',
                settings = {
