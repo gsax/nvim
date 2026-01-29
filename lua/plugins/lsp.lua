@@ -37,6 +37,7 @@ return {
                   },
                },
             },
+            tombi = { executable = 'tombi' },
          }
 
          -- Set global capabilities for all LSP servers
