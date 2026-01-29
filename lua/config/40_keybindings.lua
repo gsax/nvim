@@ -183,6 +183,16 @@ OnLSPAttach = function(_, bufnr)
    -- end, '[f]ormat current buffer')
 end
 
+-- Register the LspAttach autocmd
+vim.api.nvim_create_autocmd('LspAttach', {
+   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+   callback = function(args)
+      local bufnr = args.buf
+      local client = vim.lsp.get_client_by_id(args.data.client_id)
+      OnLSPAttach(client, bufnr)
+   end,
+})
+
 -- debug adapter
 local dap_map = function(keys, func, desc)
    if desc then
