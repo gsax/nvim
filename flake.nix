@@ -30,6 +30,7 @@
             gcc
             lua-language-server
             nixfmt
+            rustc
             stylua
           ];
         in
