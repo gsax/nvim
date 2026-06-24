@@ -17,9 +17,11 @@ return {
       opts = {
          formatters_by_ft = {
             c = { 'clang-format' },
+            css = { 'biome' },
             elixir = { 'mix' },
-            html = { 'djlint' },
+            html = { 'djlint', 'biome' },
             htmldjango = { 'djlint' },
+            javascript = { 'biome' },
             lua = { 'stylua' },
             nix = { 'nixfmt' },
             rust = { 'rustfmt' },
