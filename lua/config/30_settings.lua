@@ -40,7 +40,7 @@ vim.g.have_nerd_font = true
 -- split config
 --"""""""""""""
 -- vsplit for diffsplit
-vim.o.diffopt = 'vertical'
+-- vim.o.diffopt = 'vertical'
 
 -- place splits right and under the current pane
 vim.o.splitbelow = true
