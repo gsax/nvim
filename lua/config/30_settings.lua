@@ -32,8 +32,6 @@ vim.o.scrolloff = 2
 -- activate TrueColor support
 if vim.fn.exists('+termguicolors') then
    vim.opt.termguicolors = true
-elseif vim.fn.exists('+guicolors') then
-   vim.opt.guicolors = true
 end
 
 -- use nerdfont icons
