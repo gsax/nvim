@@ -4,4 +4,5 @@
 local set = vim.opt_local
 
 -- activate spellcheck
-set.spell.spelllang = 'de'
+set.spell = true
+set.spelllang = 'de'
