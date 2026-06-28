@@ -27,6 +27,7 @@ return {
                executable = 'jinja-lsp',
                filetypes = { 'jinja', 'htmldjango' },
             },
+            just = { executable = 'just-lsp' },
             lua_ls = { executable = 'lua-language-server' },
             nixd = { executable = 'nixd' },
             rust_analyzer = {
