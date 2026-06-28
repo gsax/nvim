@@ -27,9 +27,15 @@ return {
                      'file'
                   )
                end,
+               args = function()
+                  local input = vim.fn.input('Args: ')
+                  if input == '' then
+                     return {}
+                  end
+                  return vim.split(input, ' ')
+               end,
                cwd = '${workspaceFolder}',
                stopOnEntry = false,
-               args = {},
                runInTerminal = false,
             },
             {
