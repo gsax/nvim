@@ -42,7 +42,6 @@ return {
                'markdown',
                'markdown_inline',
                'meson',
-               'muttrc',
                'ninja',
                'nix',
                'passwd',
@@ -62,7 +61,6 @@ return {
                'xml',
                'xresources',
                'yaml',
-               'zathurarc',
                'zig',
             })
             :wait(300000) -- max. 5 minutes
