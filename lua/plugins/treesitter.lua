@@ -35,6 +35,7 @@ return {
                'json',
                'julia',
                'just',
+               'kdl',
                'lua',
                'luadoc',
                'make',

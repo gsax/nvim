@@ -22,6 +22,7 @@ return {
             html = { 'djlint', 'biome' },
             htmldjango = { 'djlint' },
             javascript = { 'biome' },
+            kdl = { 'kdlfmt' },
             lua = { 'stylua' },
             nix = { 'nixfmt' },
             rust = { 'rustfmt' },
