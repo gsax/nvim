@@ -23,7 +23,7 @@ return {
                program = function()
                   return vim.fn.input(
                      'Path to executable: ',
-                     vim.fn.getcwd() .. '/',
+                     vim.fn.getcwd() .. '/target/debug/',
                      'file'
                   )
                end,
